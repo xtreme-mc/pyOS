@@ -9,7 +9,7 @@
 * `/ai` : Asks about your favorite game and its topic.
 * `/calc` : Calculates math operations.
 * `/time` : Shows date & time in your local region.
-* `/pic` : Draws a circle in `Turtle`.
+* `/pic` : Draws a shape in `Turtle`.
 ![Circle](Turtle.PNG)
 
 >**Note** : Type `/exit` to quit the OS.
@@ -48,7 +48,7 @@
 
 ## OS interface
 
-This is the interface of the OS. It's like a basic computer.
+This is the interface of the **OS**. It's like a basic computer. Before all, it will ask your **username** for better experience.
 
 ![Run](Terminal.PNG)
 

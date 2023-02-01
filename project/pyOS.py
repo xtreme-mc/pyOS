@@ -181,6 +181,7 @@ please run the calculator again by using /calc.'''.format(user))
             forward(go)
 
         shape = input("input your shape: ")
+        
         if shape == "circle":   
             Screen()
             title("circle")
@@ -191,6 +192,7 @@ please run the calculator again by using /calc.'''.format(user))
             circle(200)
             end_fill()
             mainloop()
+
         elif shape == "square":
             Screen()
             title("square")
@@ -203,7 +205,7 @@ please run the calculator again by using /calc.'''.format(user))
             left(200)
             down(200)
             end_fill()
-            
+
             mainloop()
 
     elif software == "/game":
