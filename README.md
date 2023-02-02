@@ -18,6 +18,10 @@
 
 ## More info
 
+>**App updates** :
+
+* **1/2/2023** : public release
+
 >**Used libraries** :  
 
 * `turtle` : pics and graphics
