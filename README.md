@@ -16,11 +16,15 @@
 
 ***
 
+## App updates
+
+> **Version 1.0.0**
+
+* **2/2/2023** : public release
+
+***
+
 ## More info
-
->**App updates** :
-
-* **1/2/2023** : public release
 
 >**Used libraries** :  
 

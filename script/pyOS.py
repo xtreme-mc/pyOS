@@ -1,4 +1,4 @@
-# libraries and modules
+# used modules
 from turtle import Screen, title, mainloop
 from time import sleep, strftime
 from math import sqrt
@@ -8,7 +8,7 @@ import pygame
 
 # main script
 user = input("please input your name to start the OS: ")
-print('''welcome to pyOS, {}.
+print('''welcome to pyOS V1.0.0, {}.
 type /help for help.'''.format(user))
 
 while True:
@@ -24,7 +24,7 @@ while True:
     if software == "/help":
         print('''commands for {}:
 OS commands:
-/ai : opens the game AI.
+/ai : opens Xtreme AI.
 /calc : opens the calculator.
 /pic : draws a circle in turtle.
 other commands:
@@ -32,6 +32,7 @@ other commands:
 /time : show date and time.
 /exit : exit the program.'''.format(user))
 
+# Xtreme AI
     if software == "/ai":
         def topic():
             topic=input()
@@ -41,7 +42,7 @@ other commands:
             sleep(1)
             print("-I will try {} soon.".format(favgame))
 
-        run("AI")
+        run("Xtreme AI")
         
         print("-what's your favorite game, {} ?".format(user))
         favgame=input()
@@ -67,6 +68,7 @@ other commands:
         sleep(1)
         print("-thanks for your comments, {}.".format(user))
 
+# calculator
     elif software == "/calc": 
         run("calculator")
         
@@ -151,6 +153,7 @@ please run the calculator again by using /calc.'''.format(user))
                 quit("calculator")
                 break
 
+# turtle shapes
     elif software == "/pic":
         run("turtle")
         def settings():
@@ -204,11 +207,12 @@ please run the calculator again by using /calc.'''.format(user))
 
             mainloop()
 
+# mini-game(soon)
     elif software == "/game":
         print("soon...")
 
     elif software == "/time":
-# strftime can be used in a string : %Y, %m, d%, %H, %M, %p
+# strftime shows date and time
         print(strftime("%Y/%m/%d %H:%M"))
 
     elif software == "/exit":
