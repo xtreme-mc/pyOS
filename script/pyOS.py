@@ -26,7 +26,7 @@ while True:
 OS commands:
 /ai : opens Xtreme AI.
 /calc : opens the calculator.
-/pic : draws a circle in turtle.
+/pic : draws a picture in turtle.
 other commands:
 /help : list of commands.
 /time : show date and time.
@@ -148,7 +148,7 @@ quit : quit the app
                 print('''{}, You have not typed a valid operator or syntax, 
 please run the calculator again by using /calc.'''.format(user))
 
-            again = input("calculate again? y/n")
+            again = input("calculate again? y/n: ")
             if again == "n":
                 quit("calculator")
                 break
