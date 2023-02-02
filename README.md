@@ -10,7 +10,7 @@
 * `/calc` : Calculates math operations.
 * `/time` : Shows date & time in your local region.
 * `/pic` : Draws a shape in `Turtle`.
-![Circle](Turtle.PNG)
+![Circle](files/Turtle.PNG)
 
 >**Note** : Type `/exit` to quit the OS.
 
@@ -30,7 +30,7 @@
 
 * +150 (python)
 * +50 (markdown)
-![Program](Code.PNG)
+![Program](files/Code.PNG)
 
 >**File types** :  
 
@@ -50,7 +50,7 @@
 
 This is the interface of the **OS**. It's like a basic computer. Before all, it will ask your **username** for better experience.
 
-![Run](Terminal.PNG)
+![Run](files/Terminal.PNG)
 
 **Please visit us on :**
 

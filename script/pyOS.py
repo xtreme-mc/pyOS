@@ -1,7 +1,8 @@
 # libraries and modules
-from turtle import *
-from time import *
-from math import *
+from turtle import Screen, title, mainloop
+from time import sleep, strftime
+from math import sqrt
+import turtle
 import random
 import pygame
 
@@ -13,12 +14,10 @@ type /help for help.'''.format(user))
 while True:
     def run(app):
         print("opening {} for {}...".format(app, user))
-        wait(1)
+        sleep(1)
         print("{} opened successfully.".format(app))
     def quit(app):
         print("{} quited successfully.".format(app))
-    def wait(seconds):
-        sleep(seconds)
 
     software=input()
 
@@ -37,20 +36,20 @@ other commands:
         def topic():
             topic=input()
             print(topic)
-            wait(1)
+            sleep(1)
             print("-Wow I think It's amazing, {}.".format(user))
-            wait(1)
-            print("-I will try {} soon.".foramt(favgame))
+            sleep(1)
+            print("-I will try {} soon.".format(favgame))
 
         run("AI")
         
         print("-what's your favorite game, {} ?".format(user))
         favgame=input()
-        wait(1)
+        sleep(1)
         
         print("-do you really like {} ?".format(favgame))
         answer=input()
-        wait(1)
+        sleep(1)
         print(answer)
 
         if "yes" in answer:
@@ -61,18 +60,17 @@ other commands:
             print("please write a valid answer.")
             topic()
 
-        wait(1)
+        sleep(1)
         print("-do you have any comments for the AI ?")
         comments=input()
 
-        wait(1)
+        sleep(1)
         print("-thanks for your comments, {}.".format(user))
 
     elif software == "/calc": 
         run("calculator")
         
         while True:
-
             operation = input('''Please type the math operation you'd like to complete:
 + : addition
 - : subtraction
@@ -85,11 +83,9 @@ quit : quit the app
 ''')
 
             if operation == "+" or operation == "-" or operation == "*" or operation == "/" or operation == "%":
-                try:  
-                    a = float(input("Enter your first number: "))
-                    b = float(input("Enter your second number: "))
-                except:
-                    print("please use a float.")
+
+                a = float(input("Enter your first number: "))
+                b = float(input("Enter your second number: "))
 
                 if operation == "+":
                     try:
@@ -158,53 +154,53 @@ please run the calculator again by using /calc.'''.format(user))
     elif software == "/pic":
         run("turtle")
         def settings():
-            clear()
-            bgcolor("brown")
-            pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
-            begin_fill()
+            turtle.clear()
+            turtle.bgcolor("brown")
+            turtle.pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
+            turtle.begin_fill()
 
         def right(go):
-                setheading(90)
-                forward(go)
+                turtle.setheading(90)
+                turtle.forward(go)
 
         def left(go):
-            setheading(270)
-            forward(go)
+            turtle.setheading(270)
+            turtle.forward(go)
             
             
         def down(go):
-            setheading(180)
-            forward(go)
+            turtle.setheading(180)
+            turtle.forward(go)
             
         def up(go):
-            setheading(0)
-            forward(go)
+            turtle.setheading(0)
+            turtle.forward(go)
 
         shape = input("input your shape: ")
         
-        if shape == "circle":   
+        if shape == "circle":
             Screen()
             title("circle")
-            penup()
-            setpos(0, -100)
-            pendown()
+            turtle.penup()
+            turtle.setpos(0, -100)
+            turtle.pendown()
             settings()
-            circle(200)
-            end_fill()
+            turtle.circle(200)
+            turtle.end_fill()
             mainloop()
 
         elif shape == "square":
             Screen()
             title("square")
-            penup()
-            setpos(-100, -100)
-            pendown()
+            turtle.penup()
+            turtle.setpos(-100, -100)
+            turtle.pendown()
             settings()
             right(200)
             up(200)
             left(200)
             down(200)
-            end_fill()
+            turtle.end_fill()
 
             mainloop()
 
