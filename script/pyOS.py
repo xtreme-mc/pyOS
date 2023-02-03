@@ -11,7 +11,7 @@ import pygame
 user = input("please input your name to start the OS: ")
 print("starting...")
 sleep(1)
-print('''welcome to pyOS V1.0.0, {}.
+print('''welcome to pyOS V1.0.1, {}.
 type /help for help.'''.format(user)) #format {variable}
 
 while True:
@@ -140,7 +140,7 @@ quit : quit the app
             turtle.forward(go)
       
         while True:
-            shape = input("input your shape: ")
+            shape = input("input your shape (quit to exit): ")
 
             if shape == "circle":
                 settings("circle")
@@ -178,6 +178,7 @@ quit : quit the app
                 mainloop()
 
             elif shape == "quit":
+                quit("pics")
                 break
 
             else:
@@ -191,5 +192,6 @@ quit : quit the app
         print(strftime("%Y/%m/%d %H:%M")) # strftime shows date and time
 
     elif software == "/exit":
+        print("exiting pyOS...")
         break; exit()
 #finish
