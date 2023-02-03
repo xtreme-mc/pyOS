@@ -27,7 +27,6 @@ while True:
     if software == "/help":
         print('''commands for {}:
 OS commands:
-/ai : opens Xtreme AI.
 /calc : opens the calculator.
 /pic : draws a picture in turtle.
 other commands:
@@ -35,33 +34,6 @@ other commands:
 /time : show date and time.
 /exit : exit the program.'''.format(user))
 
-# Xtreme AI
-    if software == "/ai":
-        run("Xtreme AI")
-        print('''welcome to Xtreme AI, {}.
-type "quit" to quit the app.'''.format(user))
-
-        while True:
-            print("-what's your favorite game, {} ?".format(user))
-            favgame=input()
-            if favgame == "quit":
-                break
-
-            sleep(1)
-
-            print("-what's the topic of {} ?".format(favgame))
-            input()
-            if input() == "quit":
-                break
-
-            print("-Wow I think It's amazing, {}.".format(user))
-            sleep(1)
-            print("-I will try {} soon.".format(favgame))
-            sleep(1)
-
-            print('''thank for trying our AI.
-see you soon {} !'''.format(user)); break
-      
 # calculator
     elif software == "/calc": 
         run("calculator")
@@ -139,8 +111,7 @@ quit : quit the app
                 break
 
             else:
-                print('''{}, You have not typed a valid operator or syntax, 
-please run the calculator again by using /calc.'''.format(user))
+                print("{}, You have not typed a valid operator or syntax.".format(user))
 
             again = input("calculate again? y/n: ")
             if again == "n":
@@ -154,7 +125,6 @@ please run the calculator again by using /calc.'''.format(user))
             Screen()
             title(window)
             turtle.setpos(0, 400)
-            turtle.write(window, align = "center", font = 50 )
 
             turtle.clear()
             turtle.bgcolor("brown")
@@ -197,7 +167,7 @@ please run the calculator again by using /calc.'''.format(user))
 
             elif shape == "triangle":
                 settings("triangle")
-                position(0, 0)
+                position(100, 100)
 
                 turtle.begin_fill()
                 move(200, 120)

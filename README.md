@@ -6,10 +6,9 @@
 
 **Topic** : Mini computer that contains 4 softwares (In latest update):
 
-* `/ai` : Asks about your favorite game and its topic.
 * `/calc` : Calculates math operations.
 * `/time` : Shows date & time in your local region.
-* `/pic` : Draws a shape in `Turtle`.
+* `/pic` : Draws an image in `Turtle`.
 ![Circle](files/Turtle.PNG)
 
 >**Note** : Type `/exit` to quit the OS.
@@ -20,7 +19,17 @@
 
 > **Version 1.0.0**
 
-* **2/2/2023** : public release
+* **27/1/2023** :  
+
+* public release
+* added apps to OS
+* added markdown
+
+> **Version 1.0.1**
+
+* deleted the Xtreme AI app
+* adding more images for pics app
+* bug fixes and improvements
 
 ***
 
@@ -33,18 +42,6 @@
 * `random` : random variables
 * `math` : math operations
 * `pygame` : coding games
-
->**Lines of code** :  
-
-* +150 (python)
-* +50 (markdown)
-![Program](files/Code.PNG)
-
->**File types** :  
-
-* `.py` (python)  
-* `.ipynb` (jupyter)  
-* `.md` (markdown)
 
 >**Used apps** :
 
