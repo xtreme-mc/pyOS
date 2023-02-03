@@ -19,11 +19,8 @@
 
 > **Version 1.0.0**
 
-* **27/1/2023** :  
-
 * public release
 * added apps to OS
-* added markdown
 
 > **Version 1.0.1**
 

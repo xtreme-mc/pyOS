@@ -1,4 +1,5 @@
 # used modules
+from importlib import reload #reloading libraries
 from turtle import Screen, title, mainloop
 from time import sleep, strftime
 from math import sqrt
@@ -120,12 +121,11 @@ quit : quit the app
 
 # turtle shapes
     elif software == "/pic":
-        run("turtle")
         def settings(window):
+            reload(turtle)
             Screen()
             title(window)
             turtle.setpos(0, 400)
-
             turtle.clear()
             turtle.bgcolor("brown")
             turtle.pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
@@ -167,13 +167,12 @@ quit : quit the app
 
             elif shape == "triangle":
                 settings("triangle")
-                position(100, 100)
+                position(-100, -100)
 
                 turtle.begin_fill()
                 move(200, 120)
                 move(200 ,240)
                 move(200 ,360)
-
                 turtle.end_fill()
 
                 mainloop()
@@ -189,8 +188,7 @@ quit : quit the app
         print("soon...")
 
     elif software == "/time":
-# strftime shows date and time
-        print(strftime("%Y/%m/%d %H:%M"))
+        print(strftime("%Y/%m/%d %H:%M")) # strftime shows date and time
 
     elif software == "/exit":
         break; exit()
