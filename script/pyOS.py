@@ -8,6 +8,8 @@ import pygame
 
 # main script
 user = input("please input your name to start the OS: ")
+print("starting...")
+sleep(1)
 print('''welcome to pyOS V1.0.0, {}.
 type /help for help.'''.format(user))
 
@@ -16,6 +18,7 @@ while True:
         print("opening {} for {}...".format(app, user))
         sleep(1)
         print("{} opened successfully.".format(app))
+
     def quit(app):
         print("{} quited successfully.".format(app))
 
@@ -34,40 +37,31 @@ other commands:
 
 # Xtreme AI
     if software == "/ai":
-        def topic():
-            topic=input()
-            print(topic)
+        run("Xtreme AI")
+        print('''welcome to Xtreme AI, {}.
+type "quit" to quit the app.'''.format(user))
+
+        while True:
+            print("-what's your favorite game, {} ?".format(user))
+            favgame=input()
+            if favgame == "quit":
+                break
+
             sleep(1)
+
+            print("-what's the topic of {} ?".format(favgame))
+            input()
+            if input() == "quit":
+                break
+
             print("-Wow I think It's amazing, {}.".format(user))
             sleep(1)
             print("-I will try {} soon.".format(favgame))
+            sleep(1)
 
-        run("Xtreme AI")
-        
-        print("-what's your favorite game, {} ?".format(user))
-        favgame=input()
-        sleep(1)
-        
-        print("-do you really like {} ?".format(favgame))
-        answer=input()
-        sleep(1)
-        print(answer)
-
-        if "yes" in answer:
-            print("-So what's the topic of {} ?".format(favgame))
-            topic()
-
-        else:
-            print("please write a valid answer.")
-            topic()
-
-        sleep(1)
-        print("-do you have any comments for the AI ?")
-        comments=input()
-
-        sleep(1)
-        print("-thanks for your comments, {}.".format(user))
-
+            print('''thank for trying our AI.
+see you soon {} !'''.format(user)); break
+      
 # calculator
     elif software == "/calc": 
         run("calculator")
@@ -80,7 +74,7 @@ other commands:
 / : division
 % : modulo
 sqrt : square root
-abs : absolute number
+abs : absolute value
 quit : quit the app
 ''')
 
@@ -126,17 +120,17 @@ quit : quit the app
 
             elif operation == "sqrt":
                     try:
-                        x = float(input("Enter your number: "))
-                        print("sqrt({}) = ".format(x))
-                        print(sqrt(x))
+                        c = float(input("Enter your number: "))
+                        print("sqrt({}) = ".format(c))
+                        print(sqrt(c))
                     except:
                         print("please use a float.")
 
             elif operation == "abs":
                     try:
-                        x = float(input("Enter your number: "))
-                        print("abs({}) = ".format(x))
-                        print(abs(x))
+                        c = float(input("Enter your number: "))
+                        print("abs({}) = ".format(c))
+                        print(abs(c))
                     except:
                         print("please use a float.")
 
@@ -156,56 +150,69 @@ please run the calculator again by using /calc.'''.format(user))
 # turtle shapes
     elif software == "/pic":
         run("turtle")
-        def settings():
+        def settings(window):
+            Screen()
+            title(window)
+            turtle.setpos(0, 400)
+            turtle.write(window, align = "center", font = 50 )
+
             turtle.clear()
             turtle.bgcolor("brown")
             turtle.pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
-            turtle.begin_fill()
 
-        def right(go):
-                turtle.setheading(90)
-                turtle.forward(go)
-
-        def left(go):
-            turtle.setheading(270)
-            turtle.forward(go)
-            
-            
-        def down(go):
-            turtle.setheading(180)
-            turtle.forward(go)
-            
-        def up(go):
-            turtle.setheading(0)
-            turtle.forward(go)
-
-        shape = input("input your shape: ")
-        
-        if shape == "circle":
-            Screen()
-            title("circle")
+        def position(x, y):
             turtle.penup()
-            turtle.setpos(0, -100)
+            turtle.setpos(x, y)
             turtle.pendown()
-            settings()
-            turtle.circle(200)
-            turtle.end_fill()
-            mainloop()
 
-        elif shape == "square":
-            Screen()
-            title("square")
-            turtle.penup()
-            turtle.setpos(-100, -100)
-            turtle.pendown()
-            settings()
-            right(200)
-            up(200)
-            left(200)
-            down(200)
-            turtle.end_fill()
+        def move(go, angle):
+            turtle.setheading(angle)
+            turtle.forward(go)
+      
+        while True:
+            shape = input("input your shape: ")
 
-            mainloop()
+            if shape == "circle":
+                settings("circle")
+                position(0, -100)
+                
+                turtle.begin_fill()
+                turtle.circle(200)
+                turtle.end_fill()
+
+                mainloop()
+
+            elif shape == "square":
+                settings("square")
+                position(-100, -100)
+                
+                turtle.begin_fill()
+                move(200, 90)
+                move(200, 0)
+                move(200, 270)
+                move(200, 180)
+                turtle.end_fill()
+
+                mainloop()
+
+            elif shape == "triangle":
+                settings("triangle")
+                position(0, 0)
+
+                turtle.begin_fill()
+                move(200, 120)
+                move(200 ,240)
+                move(200 ,360)
+
+                turtle.end_fill()
+
+                mainloop()
+
+            elif shape == "quit":
+                break
+
+            else:
+                print("please type a shape.")
 
 # mini-game(soon)
     elif software == "/game":
