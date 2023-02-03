@@ -12,7 +12,7 @@ user = input("please input your name to start the OS: ")
 print("starting...")
 sleep(1)
 print('''welcome to pyOS V1.0.0, {}.
-type /help for help.'''.format(user))
+type /help for help.'''.format(user)) #format {variable}
 
 while True:
     def run(app):
