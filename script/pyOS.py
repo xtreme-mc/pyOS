@@ -1,11 +1,11 @@
 # used modules
 from importlib import reload #reloading libraries
-from turtle import Screen, title, mainloop
+from turtle import Screen, mainloop
 from time import sleep, strftime
 from math import sqrt
-import turtle
-import random
-import pygame
+import turtle as t
+import random as r
+import pygame as p
 
 # main script
 user = input("please input your name to start the OS: ")
@@ -21,7 +21,9 @@ while True:
         print("{} opened successfully.".format(app))
 
     def quit(app):
-        print("{} quited successfully.".format(app))
+        quit = input("are you sure you want to quit {}? y/n: ".format(app))
+        if quit == "y":
+            print("{} quited successfully.".format(app))
 
     software=input()
 
@@ -50,7 +52,6 @@ sqrt : square root
 abs : absolute value
 quit : quit the app
 ''')
-
             if operation == "+" or operation == "-" or operation == "*" or operation == "/" or operation == "%":
 
                 a = float(input("Enter your first number: "))
@@ -94,7 +95,7 @@ quit : quit the app
             elif operation == "sqrt":
                     try:
                         c = float(input("Enter your number: "))
-                        print("sqrt({}) = ".format(c))
+                        print("√ {} = ".format(c))
                         print(sqrt(c))
                     except:
                         print("please use a float.")
@@ -102,7 +103,7 @@ quit : quit the app
             elif operation == "abs":
                     try:
                         c = float(input("Enter your number: "))
-                        print("abs({}) = ".format(c))
+                        print("|{}| = ".format(c))
                         print(abs(c))
                     except:
                         print("please use a float.")
@@ -121,60 +122,54 @@ quit : quit the app
 
 # turtle shapes
     elif software == "/pic":
-        def settings(window):
-            reload(turtle)
-            Screen()
-            title(window)
-            turtle.setpos(0, 400)
-            turtle.clear()
-            turtle.bgcolor("brown")
-            turtle.pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
+        pos = t.setpos()
+        penup = t.penup()
+        pendn = t.pendown()
+        draw = t.begin_fill
+        color = t.end_fill
 
-        def position(x, y):
-            turtle.penup()
-            turtle.setpos(x, y)
-            turtle.pendown()
-
-        def move(go, angle):
-            turtle.setheading(angle)
-            turtle.forward(go)
+        def settings(shape):
+            reload(t)
+            wn = Screen()
+            wn.title(shape, "for {}".format(user))
+            wn.clear()
+            wn.bgcolor("brown")
+            t.pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
       
         while True:
             shape = input("input your shape (quit to exit): ")
-
             if shape == "circle":
                 settings("circle")
-                position(0, -100)
-                
-                turtle.begin_fill()
-                turtle.circle(200)
-                turtle.end_fill()
-
+                penup()
+                pos(-100, 0)
+                pendn()
+                draw()
+                t.circle(200)
+                color()
                 mainloop()
 
             elif shape == "square":
                 settings("square")
-                position(-100, -100)
-                
-                turtle.begin_fill()
-                move(200, 90)
-                move(200, 0)
-                move(200, 270)
-                move(200, 180)
-                turtle.end_fill()
-
+                penup()
+                pos(-100, -100)
+                pendn()
+                draw()
+                for start in range(4):
+                    t.fd(200)
+                    t.lt(90)
+                color()
                 mainloop()
 
             elif shape == "triangle":
                 settings("triangle")
-                position(-100, -100)
-
-                turtle.begin_fill()
-                move(200, 120)
-                move(200 ,240)
-                move(200 ,360)
-                turtle.end_fill()
-
+                penup
+                pos(-100, -100)
+                pendn
+                draw()
+                for start in range(4):
+                    t.fd(200)
+                    t.lt(120)
+                color()
                 mainloop()
 
             elif shape == "quit":
@@ -182,7 +177,7 @@ quit : quit the app
                 break
 
             else:
-                print("please type a shape.")
+                print("please type a valid shape.")
 
 # mini-game(soon)
     elif software == "/game":
@@ -192,6 +187,12 @@ quit : quit the app
         print(strftime("%Y/%m/%d %H:%M")) # strftime shows date and time
 
     elif software == "/exit":
-        print("exiting pyOS...")
-        break; exit()
+        exit = input("{} are you sure you want to exit the OS? y/n: ".format(user))
+        if exit == "y":
+            print("exiting pyOS...")
+            break; exit()
+
+    else:
+        print('''please type a valid software, {}. 
+hint: use /help to see more.'''.format(user))
 #finish
