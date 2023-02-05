@@ -1,43 +1,50 @@
-# used modules
-from importlib import reload #reloading libraries
-from turtle import Screen, mainloop
-from time import sleep, strftime
+"""
+This project is created by Xtreme MC Studios.
+This is a simulator, not a real Operating System.
+Visit us on: https://youtube.com/@xtrememc8661
+"""
+
+#modules
+from importlib import reload #reload libraries
+from time import sleep, strftime #date and time
 from math import sqrt
 import turtle as t
-import random as r
-import pygame as p
 
-# main script
+#script
 user = input("please input your name to start the OS: ")
 print("starting...")
 sleep(1)
-print('''welcome to pyOS V1.0.1, {}.
-type /help for help.'''.format(user)) #format {variable}
+print(f'''welcome to pyOS V1.0.1, {user}.
+type /help for help.''')
 
 while True:
     def run(app):
-        print("opening {} for {}...".format(app, user))
+        print(f"opening {app} for {user}...")
         sleep(1)
-        print("{} opened successfully.".format(app))
+        print(f"{app} opened successfully.")
+        return None
 
     def quit(app):
-        quit = input("are you sure you want to quit {}? y/n: ".format(app))
+        quit = input(f"are you sure you want to quit {app}? y/n: ")
         if quit == "y":
-            print("{} quited successfully.".format(app))
+            print(f"{app} quited successfully.")
+        return None
 
-    software=input()
+    software=input() #choose app
 
+#help
     if software == "/help":
-        print('''commands for {}:
+        print(f'''commands for {user}:
 OS commands:
 /calc : opens the calculator.
 /pic : draws a picture in turtle.
 other commands:
 /help : list of commands.
 /time : show date and time.
-/exit : exit the program.'''.format(user))
+/game : coming soon...
+/exit : exit the program.''')
 
-# calculator
+#calculator
     elif software == "/calc": 
         run("calculator")
         
@@ -51,148 +58,226 @@ other commands:
 sqrt : square root
 abs : absolute value
 quit : quit the app
-''')
-            if operation == "+" or operation == "-" or operation == "*" or operation == "/" or operation == "%":
+''') #choose operation
 
+            if operation in ["+", "*", "-", "/", "%"]:
                 a = float(input("Enter your first number: "))
                 b = float(input("Enter your second number: "))
 
+#addiction
                 if operation == "+":
                     try:
-                        print("{} + {} = ".format(a, b))
+                        print(f"{a} + {b} = ")
                         print(a + b)
                     except:
                         print("please use a float.")
 
+#subtraction
                 elif operation == "-":
                     try:
-                        print("{} - {} = ".format(a, b))
+                        print(f"{a} - {b} = ")
                         print(a - b)
                     except:
                         print("please use a float.")
 
+#multiplication
                 elif operation == "*":
                     try:
-                        print("{} * {} = ".format(a, b))
+                        print(f"{a} * {b} = ")
                         print(a * b)
                     except:
                         print("please use a float.")                
 
+#division
                 elif operation == "/":
                     try:
-                        print("{} / {} = ".format(a, b))
+                        print(f"{a} / {b} = ")
                         print(a / b)
                     except:
                         print("please use a float.")
 
+#modulo
                 elif operation == "%":
-                    print("{} % {} = ".format(a,b))
+                    print(f"{a} % {b} = ")
                     try:
                         print(a % b)
                     except:
                         print("please use a float.")
 
+#square root
             elif operation == "sqrt":
                     try:
                         c = float(input("Enter your number: "))
-                        print("√ {} = ".format(c))
+                        print(f"√ {c} = ")
                         print(sqrt(c))
                     except:
                         print("please use a float.")
 
+#absolute value
             elif operation == "abs":
                     try:
                         c = float(input("Enter your number: "))
-                        print("|{}| = ".format(c))
+                        print(f"|{c}| = ")
                         print(abs(c))
                     except:
                         print("please use a float.")
 
+#quit app
             elif operation == "quit":
                 quit("calculator")
                 break
 
+#invalid operator
             else:
-                print("{}, You have not typed a valid operator or syntax.".format(user))
+                print(f"{user}, You have not typed a valid operator or syntax.")
 
+#calculate again
             again = input("calculate again? y/n: ")
             if again == "n":
-                quit("calculator")
-                break
+                print(f"{software} quited successfully.") ;break
 
-# turtle shapes
+# pics shapes
     elif software == "/pic":
-        pos = t.setpos()
-        penup = t.penup()
-        pendn = t.pendown()
-        draw = t.begin_fill
-        color = t.end_fill
 
-        def settings(shape):
+#circle
+        def circle():
             reload(t)
-            wn = Screen()
-            wn.title(shape, "for {}".format(user))
-            wn.clear()
-            wn.bgcolor("brown")
-            t.pen(pencolor="orange", fillcolor="yellow", pensize=10, speed=5)
-      
+            t.Screen()
+            t.title(f"{shape} for {user}")
+            t.clear()
+            t.bgcolor("brown")
+            t.pencolor("orange")
+            t.fillcolor("yellow")
+            t.speed(3)
+            t.penup()
+            t.setpos(0, 0)
+            t.pendown()
+            t.begin_fill()
+            t.circle(200)
+            t.end_fill()
+            t.mainloop()
+            return("done")
+
+#square
+        def square():
+            reload(t)
+            t.Screen()
+            t.title(f"{shape} for {user}")
+            t.clear()
+            t.bgcolor("brown")
+            t.pencolor("orange")
+            t.fillcolor("yellow")
+            t.speed(3)
+            t.penup()
+            t.setpos(0, 0)
+            t.pendown()
+            for start in range(4):
+                t.fd(200)
+                t.lt(90)
+            t.mainloop()
+            return("done")
+
+#triangle
+        def triangle():
+            reload(t)
+            t.Screen()
+            t.title(f"{shape} for {user}")
+            t.clear()
+            t.bgcolor("brown")
+            t.pencolor("orange")
+            t.fillcolor("yellow")
+            t.speed(3)
+            t.penup()
+            t.setpos(0, 0)
+            t.pendown()
+            for start in range(3):
+                t.fd(200)
+                t.lt(120)
+            t.mainloop()
+            return("done")
+
+#rectangle
+        def rectangle():
+            reload(t)
+            t.Screen()
+            t.title(f"{shape} for {user}")
+            t.clear()
+            t.bgcolor("brown")
+            t.pencolor("orange")
+            t.fillcolor("yellow")
+            t.speed(3)
+            t.penup()
+            t.setpos(0, 0)
+            t.pendown()
+            for start in range(3):
+                t.fd(400)
+                t.lt(90)
+                t.fd(200)
+                t.lt(90)
+            t.mainloop()
+            return("done")
+
         while True:
-            shape = input("input your shape (quit to exit): ")
+            shape = input("input your shape (quit to exit): ") #choose shape
+
             if shape == "circle":
-                settings("circle")
-                penup()
-                pos(-100, 0)
-                pendn()
-                draw()
-                t.circle(200)
-                color()
-                mainloop()
+                circle()
 
             elif shape == "square":
-                settings("square")
-                penup()
-                pos(-100, -100)
-                pendn()
-                draw()
-                for start in range(4):
-                    t.fd(200)
-                    t.lt(90)
-                color()
-                mainloop()
+                square()
 
             elif shape == "triangle":
-                settings("triangle")
-                penup
-                pos(-100, -100)
-                pendn
-                draw()
-                for start in range(4):
-                    t.fd(200)
-                    t.lt(120)
-                color()
-                mainloop()
+                triangle()
 
+            elif shape == "rectangle":
+                rectangle()         
+
+#quit app
             elif shape == "quit":
-                quit("pics")
-                break
+                quit("pics"); break
 
+#invalid shape
             else:
                 print("please type a valid shape.")
 
-# mini-game(soon)
+#game (soon)
     elif software == "/game":
         print("soon...")
 
+#time
     elif software == "/time":
-        print(strftime("%Y/%m/%d %H:%M")) # strftime shows date and time
+        day = strftime("%A, %B %d, %Y")
+        hour = strftime("%H:%M:%S")
+        clock_wn = input("do you want output in another window? y/n: ")
+        
+        if clock_wn == "y":
+            t.Screen
+            t.title(f"time for {user}")
+            t.clear()
+            t.bgcolor("brown")
+            t.speed("fastest")
+            t.setpos(0, 0)
+            t.hideturtle()
+            t.penup()
+            t.pencolor("yellow")
+            t.write(day, align = "center", font = ("Arial", 16, "normal"))
+            t.setpos(0, -24)
+            t.write(hour, align = "center", font = ("Arial", 16, "normal"))
+            t.mainloop()
 
+        print(day)
+        print(hour)
+
+#exit OS
     elif software == "/exit":
-        exit = input("{} are you sure you want to exit the OS? y/n: ".format(user))
+        exit = input(f"{user}, are you sure you want to exit the OS? y/n: ")
         if exit == "y":
             print("exiting pyOS...")
+            sleep(1)
             break; exit()
 
+#invalid app
     else:
-        print('''please type a valid software, {}. 
-hint: use /help to see more.'''.format(user))
+        print(f'''please type a valid software, {user}. 
+hint: use /help to see more.''')
 #finish
