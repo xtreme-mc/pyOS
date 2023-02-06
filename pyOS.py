@@ -36,10 +36,9 @@ while True:
     if software == "/help":
         print(f'''commands for {user}:
 OS commands:
+/help : list of commands.
 /calc : opens the calculator.
 /pic : draws a picture in turtle.
-other commands:
-/help : list of commands.
 /time : show date and time.
 /game : coming soon...
 /exit : exit the program.''')
@@ -49,78 +48,79 @@ other commands:
         run("calculator")
         
         while True:
-            operation = input('''Please type the math operation you'd like to complete:
-+ : addition
-- : subtraction
-* : multiplication
-/ : division
-% : modulo
-sqrt : square root
-abs : absolute value
-quit : quit the app
-''') #choose operation
+            operation = input("Please type the math operation: +, -, *, /, sqrt or quit.")#choose operation
 
-            if operation in ["+", "*", "-", "/", "%"]:
-                a = float(input("Enter your first number: "))
-                b = float(input("Enter your second number: "))
-
+            if operation in ("+", "*", "-", "/", "%"):
 #addiction
                 if operation == "+":
-                    try:
-                        print(f"{a} + {b} = ")
-                        print(a + b)
-                    except:
-                        print("please use a float.")
+                    while True:
+                        try:
+                            a = float(input("Enter your first number: "))
+                            b = float(input("Enter your second number: "))
+                            print(f"{a} + {b} = ")
+                            print(a + b)
+                            break
+                        except:
+                            print("please use a number.")
 
 #subtraction
                 elif operation == "-":
-                    try:
-                        print(f"{a} - {b} = ")
-                        print(a - b)
-                    except:
-                        print("please use a float.")
+                    while True:
+                        try:
+                            a = float(input("Enter your first number: "))
+                            b = float(input("Enter your second number: "))
+                            print(f"{a} - {b} = ")
+                            print(a - b)
+                            break
+                        except:
+                            print("please use a number.")
 
 #multiplication
                 elif operation == "*":
-                    try:
-                        print(f"{a} * {b} = ")
-                        print(a * b)
-                    except:
-                        print("please use a float.")                
+                    while True:
+                        try:
+                            a = float(input("Enter your first number: "))
+                            b = float(input("Enter your second number: "))
+                            print(f"{a} * {b} = ")
+                            print(a * b)
+                            break
+                        except:
+                            print("please use a number.")                
 
 #division
                 elif operation == "/":
-                    try:
-                        print(f"{a} / {b} = ")
-                        print(a / b)
-                    except:
-                        print("please use a float.")
+                    while True:
+                        try:
+                            a = float(input("Enter your first number: "))
+                            b = float(input("Enter your second number: "))
+                            print(f"{a} / {b} = ")
+                            print(a / b)
+                            break
+                        except:
+                            print("please use a number.")
 
 #modulo
                 elif operation == "%":
-                    print(f"{a} % {b} = ")
-                    try:
-                        print(a % b)
-                    except:
-                        print("please use a float.")
+                    while True:
+                        try:
+                            a = float(input("Enter your first number: "))
+                            b = float(input("Enter your second number: "))
+                            print(f"{a} % {b} = ")
+                            print(a % b)
+                            break
+                        except:
+                            print("please use a number.")
 
 #square root
             elif operation == "sqrt":
+                while True :
                     try:
                         c = float(input("Enter your number: "))
-                        print(f"√ {c} = ")
-                        print(sqrt(c))
+                        print(f"√{c} = ")
+                        print(sqrt(abs(c)))
+                        break
                     except:
-                        print("please use a float.")
-
-#absolute value
-            elif operation == "abs":
-                    try:
-                        c = float(input("Enter your number: "))
-                        print(f"|{c}| = ")
-                        print(abs(c))
-                    except:
-                        print("please use a float.")
+                        print("please use a number.")
 
 #quit app
             elif operation == "quit":
@@ -134,7 +134,7 @@ quit : quit the app
 #calculate again
             again = input("calculate again? y/n: ")
             if again == "n":
-                print(f"{software} quited successfully.") ;break
+                print(f"calculator quited successfully.") ;break
 
 # pics shapes
     elif software == "/pic":
@@ -248,14 +248,13 @@ quit : quit the app
     elif software == "/time":
         day = strftime("%A, %B %d, %Y")
         hour = strftime("%H:%M:%S")
-        clock_wn = input("do you want output in another window? y/n: ")
-        
-        if clock_wn == "y":
+        window = input("do you want output in another window? y/n: ")
+
+        if window == "y":
             t.Screen
             t.title(f"time for {user}")
             t.clear()
             t.bgcolor("brown")
-            t.speed("fastest")
             t.setpos(0, 0)
             t.hideturtle()
             t.penup()
