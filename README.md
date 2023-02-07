@@ -4,15 +4,14 @@
 
 > **Before use**: This is not an OS, it's a simulator.
 
-It's a program containing apps, games, and cmd.\
-The OS will ask username to improve your experience.
+It's a program containing applications and games. each app or game has its features and uses. The OS will ask for your username to improve your experience in the OS.
 
 **Applications and games**:
 
 * `/calc` : Calculates math operations.
 * `/time` : Shows date & time in your region.
-* `/pic` : Draws a selected shape.
-* `/game` : (Coming to the next update).
+* `/draw` : Draws a selected shape.
+* `/quiz` : (Coming to the next update).
 
 >**Note** : Type `/exit` to quit the OS.
 
@@ -51,41 +50,6 @@ The OS will ask username to improve your experience.
 * [Discord]('https://discord.gg/jccvsn6baM')
 * [Twitter]('https://twitter.com/@Yassine_XT8661')
 * [Youtube]('https://youtube.com/@xtrememc8661')
-
->**Used apps** :
-
-* [vs code]('https://vscode.dev')
-* [python]('https://python.org')
-* [github]('https://github.com')
-
->**Source code** :
-
-```python
-"""
-That's only the start of the source code.
-It shows the modules and welcome output.
-"""
-
-#modules
-from importlib import reload #reload libraries
-from time import sleep, strftime #date and time
-from random import choice
-from math import sqrt
-import turtle as t
-
-#script
-user = input("please input your name to start the OS: ")
-print("starting...")
-sleep(1)
-print(f'''welcome to pyOS V1.0.1, {user}.
-type /help for help.''')
-```
-
-***
-
-## OS interface
-
-![Run](files/Terminal.PNG)
 
 ***
 

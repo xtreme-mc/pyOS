@@ -4,13 +4,12 @@ This is a simulator, not a real Operating System.
 Visit us on: https://youtube.com/@xtrememc8661
 """
 
-#modules
-from importlib import reload #reload libraries
+#!/usr/bin/env python3
 from time import sleep, strftime #date and time
 from math import sqrt
 import turtle as t
 
-#script
+#username
 user = input("please input your name to start the OS: ")
 print("starting...")
 sleep(1)
@@ -38,7 +37,7 @@ while True:
 OS commands:
 /help : list of commands.
 /calc : opens the calculator.
-/pic : draws a picture in turtle.
+/draw : draws a picture in turtle.
 /time : show date and time.
 /game : coming soon...
 /exit : exit the program.''')
@@ -48,7 +47,7 @@ OS commands:
         run("calculator")
         
         while True:
-            operation = input("Please type the math operation: +, -, *, /, sqrt or quit.")#choose operation
+            operation = input("Please type the math operation: +, -, *, /, sqrt or quit: ") #choose operation
 
             if operation in ("+", "*", "-", "/", "%"):
 #addiction
@@ -137,12 +136,11 @@ OS commands:
                 print(f"calculator quited successfully.") ;break
 
 # pics shapes
-    elif software == "/pic":
-
+    elif software == "/draw":
 #circle
         def circle():
-            reload(t)
-            t.Screen()
+            root = t.getcanvas()._root()
+            root.iconbitmap("shape.ico")
             t.title(f"{shape} for {user}")
             t.clear()
             t.bgcolor("brown")
@@ -160,8 +158,6 @@ OS commands:
 
 #square
         def square():
-            reload(t)
-            t.Screen()
             t.title(f"{shape} for {user}")
             t.clear()
             t.bgcolor("brown")
@@ -171,16 +167,16 @@ OS commands:
             t.penup()
             t.setpos(0, 0)
             t.pendown()
+            t.begin_fill()
             for start in range(4):
                 t.fd(200)
                 t.lt(90)
+            t.end_fill()
             t.mainloop()
             return("done")
 
 #triangle
         def triangle():
-            reload(t)
-            t.Screen()
             t.title(f"{shape} for {user}")
             t.clear()
             t.bgcolor("brown")
@@ -190,16 +186,16 @@ OS commands:
             t.penup()
             t.setpos(0, 0)
             t.pendown()
+            t.begin_fill()
             for start in range(3):
                 t.fd(200)
                 t.lt(120)
             t.mainloop()
+            t.end_fill()
             return("done")
 
 #rectangle
         def rectangle():
-            reload(t)
-            t.Screen()
             t.title(f"{shape} for {user}")
             t.clear()
             t.bgcolor("brown")
@@ -209,11 +205,13 @@ OS commands:
             t.penup()
             t.setpos(0, 0)
             t.pendown()
+            t.begin_fill()
             for start in range(3):
                 t.fd(400)
                 t.lt(90)
                 t.fd(200)
                 t.lt(90)
+            t.end_fill()
             t.mainloop()
             return("done")
 
@@ -246,26 +244,35 @@ OS commands:
 
 #time
     elif software == "/time":
-        day = strftime("%A, %B %d, %Y")
-        hour = strftime("%H:%M:%S")
-        window = input("do you want output in another window? y/n: ")
+        while True:
+            day = strftime("%A, %B %d, %Y")
+            hour = strftime("%H:%M:%S")
+            window = input("do you want output in another window? y/n: ")
 
-        if window == "y":
-            t.Screen
-            t.title(f"time for {user}")
-            t.clear()
-            t.bgcolor("brown")
-            t.setpos(0, 0)
-            t.hideturtle()
-            t.penup()
-            t.pencolor("yellow")
-            t.write(day, align = "center", font = ("Arial", 16, "normal"))
-            t.setpos(0, -24)
-            t.write(hour, align = "center", font = ("Arial", 16, "normal"))
-            t.mainloop()
+            def clock():
+                t.title(f"time for {user}")
+                t.clear()
+                t.bgcolor("brown")
+                t.setpos(0, 0)
+                t.hideturtle()
+                t.penup()
+                t.pencolor("yellow")
+                t.write(day, align = "center", font = ("Arial", 16, "normal"))
+                t.setpos(0, -24)
+                t.write(hour, align = "center", font = ("Arial", 16, "normal"))
+                t.mainloop()
 
-        print(day)
-        print(hour)
+            if window == "y":
+                run("time")
+                clock(); break
+
+            elif window == "n":
+                print(day)
+                print(hour)
+                break
+
+            else:
+                print("please type y (yes) or n (no).")    
 
 #exit OS
     elif software == "/exit":
