@@ -1,11 +1,9 @@
-"""
-This project is created by Xtreme MC Studios.
+"""This project is created by Xtreme MC Studios.
 This is a simulator, not a real Operating System.
-Visit us on: https://youtube.com/@xtrememc8661
-"""
+Visit us on: https://youtube.com/@xtrememc8661"""
 
 #!/usr/bin/env python3
-from time import sleep, strftime #date and time
+from time import sleep, strftime
 from math import sqrt
 import turtle as t
 
@@ -13,23 +11,25 @@ import turtle as t
 user = input("please input your name to start the OS: ")
 print("starting...")
 sleep(1)
-print(f'''welcome to pyOS V1.0.1, {user}.
+print(f'''welcome to pyOS V0.1.2, {user}.
 type /help for help.''')
 
 while True:
+    #run app
     def run(app):
         print(f"opening {app} for {user}...")
         sleep(1)
         print(f"{app} opened successfully.")
         return None
 
+    #quit app
     def quit(app):
         quit = input(f"are you sure you want to quit {app}? y/n: ")
         if quit == "y":
             print(f"{app} quited successfully.")
         return None
 
-    software=input() #choose app
+    software=input()
 
 #help
     if software == "/help":
@@ -47,7 +47,7 @@ OS commands:
         run("calculator")
         
         while True:
-            operation = input("Please type the math operation: +, -, *, /, sqrt or quit: ") #choose operation
+            operation = input("Please type the math operation: +, -, *, /, sqrt or quit: ")
 
             if operation in ("+", "*", "-", "/", "%"):
 #addiction
@@ -138,9 +138,7 @@ OS commands:
 # pics shapes
     elif software == "/draw":
 #circle
-        def circle():
-            root = t.getcanvas()._root()
-            root.iconbitmap("shape.ico")
+        def circles():
             t.title(f"{shape} for {user}")
             t.clear()
             t.bgcolor("brown")
@@ -154,7 +152,7 @@ OS commands:
             t.circle(200)
             t.end_fill()
             t.mainloop()
-            return("done")
+            return True
 
 #square
         def square():
@@ -173,7 +171,7 @@ OS commands:
                 t.lt(90)
             t.end_fill()
             t.mainloop()
-            return("done")
+            return True
 
 #triangle
         def triangle():
@@ -192,7 +190,7 @@ OS commands:
                 t.lt(120)
             t.mainloop()
             t.end_fill()
-            return("done")
+            return True
 
 #rectangle
         def rectangle():
@@ -213,13 +211,13 @@ OS commands:
                 t.lt(90)
             t.end_fill()
             t.mainloop()
-            return("done")
+            return True
 
         while True:
-            shape = input("input your shape (quit to exit): ") #choose shape
+            shape = input("input your shape (quit to exit): ")
 
             if shape == "circle":
-                circle()
+                circles()
 
             elif shape == "square":
                 square()
@@ -249,6 +247,7 @@ OS commands:
             hour = strftime("%H:%M:%S")
             window = input("do you want output in another window? y/n: ")
 
+#other window
             def clock():
                 t.title(f"time for {user}")
                 t.clear()
