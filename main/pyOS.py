@@ -1,9 +1,9 @@
-"""This project is created by Xtreme MC Studios.
-This is a simulator, not a real Operating System.
-Visit us on: https://youtube.com/@xtrememc8661"""
+# This project is created by Xtreme MC Studios.
+# This is a simulator, not an Operating System.
+# Visit us: https://youtube.com/@xtrememc8661.
 
-#!/usr/bin/env python3
 from time import sleep, strftime
+from random import choice
 from math import sqrt
 import turtle as t
 
@@ -15,7 +15,7 @@ while True:
     else:
         print("starting...")
         sleep(1)
-        print(f'''welcome to pyOS V0.1.2, {user}.
+        print(f'''welcome to pyOS, {user}.
 type /help for help.'''); break
 
 #app icon
@@ -24,16 +24,17 @@ def icon():
     root.iconbitmap("main\logo-pyOS.ico")
 
 #run app
-def run(app):
-    print(f"opening {app} for {user}...")
+def run():
+    print(f"opening {software} for {user}...")
     sleep(1)
-    print(f"{app} opened successfully.")
-    return True
+    print(f"{software} opened successfully.")
 
 #quit app
-def quit(app):
-    print(f"{app} quited successfully.")
-    return True
+def quit():
+    print(f"{software} quited successfully.")
+
+def error():
+    print(f"{user}, an error occured in {software}.")
 
 while True:
     software=input()
@@ -46,12 +47,12 @@ OS commands:
 /calc : opens the calculator.
 /draw : draws a picture in turtle.
 /time : show date and time.
-/quiz : coming soon...
+/guess : guess the number.
 /exit : exit the program.''')
 
 #calculator
     elif software == "/calc": 
-        run("calculator")
+        run()
         
         while True:
             operation = input("Please type the math operation: +, -, *, /, sqrt or quit: ")
@@ -122,7 +123,7 @@ OS commands:
                         print("please use a number.")
 
             elif operation == "quit": #quit
-                quit("calculator"); break
+                quit(); break
 
             else: #invalid
                 print(f"{user}, You have not typed a valid operator or syntax.")
@@ -130,15 +131,16 @@ OS commands:
 #calculate again
             calc_again = input("calculate again? y/n: ")
             if calc_again == "n":
-                quit("calculator") ;break
+                quit() ;break
 
 # pics shapes
     elif software == "/draw":
+        run()
         icon()
 
         t.title(f"draw for {user}")
-#circle
-        def shape_cir():
+
+        def shape_cir(): #circle
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -150,10 +152,8 @@ OS commands:
             t.begin_fill()
             t.circle(200)
             t.end_fill()
-            return True
 
-#square
-        def shape_squ():
+        def shape_squ(): #square
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -167,10 +167,8 @@ OS commands:
                 t.fd(200)
                 t.lt(90)
             t.end_fill()
-            return True
 
-#triangle
-        def shape_tri():
+        def shape_tri(): #triangle
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -184,10 +182,8 @@ OS commands:
                 t.fd(200)
                 t.lt(120)
             t.end_fill()
-            return True
 
-#rectangle
-        def shape_rec():
+        def shape_rec(): #rectangle
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -203,11 +199,10 @@ OS commands:
                 t.fd(200)
                 t.lt(90)
             t.end_fill()
-            return True
 
         while True:
             try:
-                shape = t.textinput("Enter your shape" ,"Type exit to quit:")
+                shape = t.textinput("Enter your shape" ,"Type quit to exit:")
 
                 if shape == "circle":
                     shape_cir()
@@ -227,8 +222,7 @@ OS commands:
                     t.goto(0, 0)
                     t.write("please wait...", align = "center", font = ("Arial", 16, "normal"))
                     t.bye()
-                    quit("draw")
-                    break
+                    quit(); break
 
                 else: #invalid
                     t.clear()
@@ -241,16 +235,96 @@ OS commands:
                 draw_again = t.textinput("draw again ?", "type y/n:")
                 if draw_again == "n":
                     t.bye()
-                    quit("draw")
-                    break
+                    quit(); break
+
             except:
                 t.bye()
-                quit("draw")
-                break
+                error()
+                quit(); break
 
-#game
-    elif software == "/quiz":
-        print("soon...")
+#guess
+    elif software == "/guess":
+        def num_choice():
+            t.title(f"VIP Guess for {user}")
+            icon()
+
+            t.clear()
+            t.hideturtle()
+            t.bgcolor("brown")
+            t.pencolor("yellow")
+            t.penup()
+            t.write("Loading...", align="center", font=("Arial", 16, "normal"))
+            sleep(2)
+            t.clear()
+            t.goto(0, 50)
+
+            while True:
+                num = range(11)
+                ran_num = choice(num)
+                diff = t.textinput("Enter difficulty...", "easy/normal/hard/insane/impossible")
+
+                if diff == "easy":
+                    attempts = 8
+                    break
+                
+                elif diff == "normal":
+                    attempts = 5
+                    break
+
+                elif diff == "hard":
+                    attempts = 3
+                    break
+
+                elif diff == "insane":
+                    attempts = 2
+                    break
+
+                elif diff == "impossible":
+                    attempts = 1
+                    break
+
+                else:
+                    t.write("Please type a difficulty.", align="center", font=("Arial", 16, "normal"))
+            
+            while True:
+                try:
+                    answer = int(t.textinput("Guess number...", f"Enter a number between 0-10 ({attempts} attempts left)"))
+                except:
+                    t.clear()
+                    t.goto(0, 50)
+                    t.write("Please type a number.", align="center", font=("Arial", 16, "normal"))
+                
+                if answer < ran_num:
+                    attempts -= 1
+                    t.clear()
+                    t.goto(0, 50)
+                    t.write(f"Too low. {attempts} attempts left.", align="center", font=("Arial", 16, "normal"))
+
+                elif answer > ran_num:
+                    attempts -= 1
+                    t.clear()
+                    t.goto(0, 50)
+                    t.write(f"Too high. {attempts} attempts left.", align="center", font=("Arial", 16, "normal"))
+
+                elif answer == ran_num:
+                    t.clear()
+                    t.goto(0, 50)
+                    t.write(f"You win! The number was {ran_num}", align="center", font=("Arial", 16, "normal"))
+                    t.mainloop() ;break
+
+                if attempts == 0:
+                    t.clear()
+                    t.goto(0, 50)
+                    t.write(f"You lose... The number was {ran_num}", align="center", font=("Arial", 16, "normal"))
+                    t.mainloop(); break         
+            
+        try:
+            run()
+            num_choice()
+            quit()
+
+        except:
+            error()
 
 #time
     elif software == "/time":
@@ -272,11 +346,13 @@ OS commands:
             t.setpos(0, -24)
             t.write(hour, align = "center", font = ("Arial", 16, "normal"))
             t.mainloop()
-            return True
 
-        run("time")
-        clock()
-        quit("time")
+        try:
+            run()
+            clock()
+            quit()
+        except:
+            error()
 
 #exit OS
     elif software == "/exit":
