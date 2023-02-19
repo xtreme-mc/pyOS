@@ -4,7 +4,7 @@
 
 from time import sleep, strftime
 from random import choice
-from math import sqrt
+from math import sqrt, pi
 import turtle as t
 
 #username
@@ -15,8 +15,8 @@ while True:
     else:
         print("starting...")
         sleep(1)
-        print(f'''welcome to pyOS, {user}.
-type /help for help.'''); break
+        print(f"welcome to pyOS, {user}.\ntype help for help.")
+        break
 
 #app icon
 def icon():
@@ -32,26 +32,24 @@ def run():
 #quit app
 def quit():
     print(f"{software} quited successfully.")
+    print("enter the name of app you want to open.\nneed help? type help.")
 
+#app error
 def error():
-    print(f"{user}, an error occured in {software}.")
+    print(f"an error occured in {software}.")
+    print(f"quitting {software}...")
+    sleep(1)
+    quit()
 
 while True:
     software=input()
 
 #help
-    if software == "/help":
-        print(f'''commands for {user}:
-OS commands:
-/help : list of commands.
-/calc : opens the calculator.
-/draw : draws a picture in turtle.
-/time : show date and time.
-/guess : guess the number.
-/exit : exit the program.''')
+    if software == "help":
+        print(f"commands for {user}:\nhelp : list of apps.\ncalc : open the calculator.\ndraw : draw a picture in another window.\ntime : show date and time.\nguess : guess the number.\nexit : exit the program.")
 
 #calculator
-    elif software == "/calc": 
+    elif software == "calc": 
         run()
         
         while True:
@@ -62,8 +60,7 @@ OS commands:
                     try:
                         a = float(input("Enter your first number: "))
                         b = float(input("Enter your second number: "))
-                        print(f"{a} + {b} = ")
-                        print(a + b)
+                        print(f"{a} + {b} = {a + b}")
                         break
                     except:
                         print("please use a number.")
@@ -73,19 +70,17 @@ OS commands:
                     try:
                         a = float(input("Enter your first number: "))
                         b = float(input("Enter your second number: "))
-                        print(f"{a} - {b} = ")
-                        print(a - b)
+                        print(f"{a} - {b} = {a - b}")
                         break
                     except:
                         print("please use a number.")
 
-            elif operation == "*": #multi
+            elif operation == "*": #multiply
                 while True:
                     try:
                         a = float(input("Enter your first number: "))
                         b = float(input("Enter your second number: "))
-                        print(f"{a} * {b} = ")
-                        print(a * b)
+                        print(f"{a} * {b} = {a * b}")
                         break
                     except:
                         print("please use a number.")                
@@ -95,8 +90,7 @@ OS commands:
                     try:
                         a = float(input("Enter your first number: "))
                         b = float(input("Enter your second number: "))
-                        print(f"{a} / {b} = ")
-                        print(a / b)
+                        print(f"{a} / {b} = {a / b}")
                         break
                     except:
                         print("please use a number.")
@@ -106,8 +100,7 @@ OS commands:
                     try:
                         a = float(input("Enter your first number: "))
                         b = float(input("Enter your second number: "))
-                        print(f"{a} % {b} = ")
-                        print(a % b)
+                        print(f"{a} % {b} = {a % b}")
                         break
                     except:
                         print("please use a number.")
@@ -116,14 +109,15 @@ OS commands:
                 while True :
                     try:
                         c = float(input("Enter your number: "))
-                        print(f"√{c} = ")
-                        print(sqrt(abs(c)))
+                        result = sqrt(abs(c))
+                        print(f"√{c} = {result}")
                         break
                     except:
                         print("please use a number.")
 
             elif operation == "quit": #quit
-                quit(); break
+                quit()
+                break
 
             else: #invalid
                 print(f"{user}, You have not typed a valid operator or syntax.")
@@ -131,16 +125,21 @@ OS commands:
 #calculate again
             calc_again = input("calculate again? y/n: ")
             if calc_again == "n":
-                quit() ;break
+                quit()
+                break
 
-# pics shapes
-    elif software == "/draw":
+#draw shapes
+    elif software == "draw":
         run()
         icon()
-
         t.title(f"draw for {user}")
-
+        
         def shape_cir(): #circle
+            dm = 200
+            ray = dm / 2
+            s = ray * ray * pi
+            out = dm * pi
+
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -150,10 +149,16 @@ OS commands:
             t.goto(0, 0)
             t.pendown()
             t.begin_fill()
-            t.circle(200)
+            t.circle(dm)
             t.end_fill()
+            print(f"user: {user}\nshape: {shape}\nsurface: {s}\ndiameter: {dm}\noutline: {out}")
 
         def shape_squ(): #square
+            line = 200
+            s = line * line
+            dm = line * sqrt(2)
+            out = line * 4
+
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -163,12 +168,19 @@ OS commands:
             t.goto(0, 0)
             t.pendown()
             t.begin_fill()
-            for start in range(4):
-                t.fd(200)
+            for i in range(4):
+                t.fd(line)
                 t.lt(90)
             t.end_fill()
+            print(f"user: {user}\nshape: {shape}\nsurface: {s}\ndiameter: {dm}\nlateral: {line}\noutline: {out}")
 
         def shape_tri(): #triangle
+            type = "equilateral"
+            base = 200
+            ht = base * (sqrt(3)/2)
+            s = base * ht / 2
+            out = base * 3
+
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -178,12 +190,19 @@ OS commands:
             t.goto(0, 0)
             t.pendown()
             t.begin_fill()
-            for start in range(3):
+            for i in range(3):
                 t.fd(200)
                 t.lt(120)
             t.end_fill()
+            print(f"user: {user}\nshape: {shape}\nsurface: {s}\ntype: {type}\nbase: {base}\nheight: {ht}\noutline: {out}")
 
         def shape_rec(): #rectangle
+            ht = 400
+            width = 200
+            s = ht * width
+            dm =  sqrt(ht*ht + width*width)
+            out = (width+ht) * 2
+
             t.clear()
             t.bgcolor("brown")
             t.pencolor("orange")
@@ -193,15 +212,16 @@ OS commands:
             t.goto(0, 0)
             t.pendown()
             t.begin_fill()
-            for start in range(3):
+            for i in range(2):
                 t.fd(400)
                 t.lt(90)
                 t.fd(200)
                 t.lt(90)
             t.end_fill()
+            print(f"user: {user}\nshape: {shape}\nsurface: {s}\ndiameter: {dm}\nheight: {ht}\nwidth: {width}\noutline: {out}")
 
-        while True:
-            try:
+        try:
+            while True:
                 shape = t.textinput("Enter your shape" ,"Type quit to exit:")
 
                 if shape == "circle":
@@ -217,17 +237,14 @@ OS commands:
                     shape_rec()         
 
                 elif shape == "quit": #quit
-                    t.clear()
-                    t.penup()
-                    t.goto(0, 0)
-                    t.write("please wait...", align = "center", font = ("Arial", 16, "normal"))
                     t.bye()
-                    quit(); break
+                    quit()
+                    break
 
                 else: #invalid
                     t.clear()
                     t.penup()
-                    t.goto(0, 0)
+                    t.goto(0, 50)
                     t.write("please type a valid shape.", align = "center", font = ("Arial", 16, "normal"))
 
                 t.goto(0,0)
@@ -235,15 +252,16 @@ OS commands:
                 draw_again = t.textinput("draw again ?", "type y/n:")
                 if draw_again == "n":
                     t.bye()
-                    quit(); break
+                    quit()
+                    break
 
-            except:
-                t.bye()
-                error()
-                quit(); break
+        except:
+            t.bye()
+            error()
+            quit()
 
 #guess
-    elif software == "/guess":
+    elif software == "guess":
         def num_choice():
             t.title(f"VIP Guess for {user}")
             icon()
@@ -310,13 +328,15 @@ OS commands:
                     t.clear()
                     t.goto(0, 50)
                     t.write(f"You win! The number was {ran_num}", align="center", font=("Arial", 16, "normal"))
-                    t.mainloop() ;break
+                    t.mainloop()
+                    break
 
                 if attempts == 0:
                     t.clear()
                     t.goto(0, 50)
                     t.write(f"You lose... The number was {ran_num}", align="center", font=("Arial", 16, "normal"))
-                    t.mainloop(); break         
+                    t.mainloop()
+                    break         
             
         try:
             run()
@@ -327,7 +347,7 @@ OS commands:
             error()
 
 #time
-    elif software == "/time":
+    elif software == "time":
         day = strftime("%A, %B %d, %Y")
         hour = strftime("%H:%M:%S")
 
@@ -355,7 +375,7 @@ OS commands:
             error()
 
 #exit OS
-    elif software == "/exit":
+    elif software == "exit":
         exit = input(f"{user}, are you sure you want to exit the OS? y/n: ")
         if exit == "y":
             print("exiting pyOS...")

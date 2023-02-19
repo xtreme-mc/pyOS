@@ -13,32 +13,7 @@ It's a program containing applications and games. each app or game has its featu
 
 ## Updates
 
-**Note** : Only important updates will be shown here.
-
-> **Latest Version: Alpha 0.2.0**
-
-* Added error message
-* Changed "pics" to "draw"
-* improved draw
-* New game : guess
-
-> **Alpha 0.1.7**  
-
-* improved username
-* Removed abs in calculator
-* Added pop-up window for time
-* Added rectangle to pics
-
-> **Alpha 0.1.3**
-
-* Added username
-* Removed Xtreme AI
-* New app : pics
-
-> **Alpha 0.1.0**
-
-* Public repostory
-* Public Alpha
+Coming in April...
 
 ## How to use
 
@@ -68,7 +43,8 @@ Each app has its features. To know how to use an app, follow the instructions. A
 
 ## Feedback
 
-If you have any issue or idea, please let us know in [Github]('https://github.com/Sansoun/pyOS').
+bugs, issues, glithes or got any idea to improve our program?\
+please let us know in [Github]('https://github.com/Sansoun/pyOS').
 
 ***
 
