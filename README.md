@@ -21,7 +21,7 @@ To use the app, copy the [pyOS](.main/pyOS.py) code and paste it into your pytho
 
 ![IDLE](assets/IDLE.png)
 
-After you runned the code, enter your username to. You can't continue with a blank name. Then, type one of the apps you want. If you want to know all the commands, read the Introduction above, or simply type `/help`. For example, we will type `/calc`.
+After you run the code, enter your username to. You can't continue with a blank name. Then, type one of the apps you want. If you want to know all the commands, read the Introduction above, or simply type `/help`. For example, we will type `/calc`.
 
 ```pyOS
 please input your name to start the OS:
@@ -43,7 +43,7 @@ Each app has its features. To know how to use an app, follow the instructions. A
 
 ## Feedback
 
-bugs, issues, glithes or got any idea to improve our program?\
+bugs, issues, glitches or got any idea to improve our program?\
 please let us know in [Github]('https://github.com/Sansoun/pyOS').
 
 ***
