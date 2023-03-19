@@ -1,18 +1,15 @@
 from time import sleep, strftime
-from random import choice
-from math import sqrt, pi
 import tkinter as tk
 import turtle as t
+import random, getpass, string, pyperclip
 
-user = ""
-while user == "":
-    user = input("please input your name to start: ")
+try:
+    user = getpass.getuser()
+except:
+    user = "guest"
 
-print("starting...")
-sleep(1)
 print(f"welcome, {user}.")
 print(strftime("%H:%M %d/%m/%Y"))
 
 def icon():
-    root = t.getcanvas()._root()
-    root.iconbitmap("assets\logo-pyOS.ico")
+    t.getcanvas()._root().iconbitmap("assets\logo-pyOS.ico")

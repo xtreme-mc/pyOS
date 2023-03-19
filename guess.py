@@ -1,24 +1,20 @@
 from main import *
 
-software = "guess"
 def num_choice():
-    t.title(f"guess for {user}")
-    icon()
     t.clear()
     t.hideturtle()
-    t.bgcolor("brown")
-    t.pencolor("yellow")
     t.penup()
-    t.write("Loading...", align="center", font=("Arial", 48, "normal"))
+    t.write("loading...", align="center", font=("Arial", 48, "normal"))
     sleep(2)
     t.clear()
     t.goto(0, 50)
 
     while True:
         num = range(11)
-        ran_num = choice(num)
-        diff = t.textinput("Enter difficulty...", "easy/normal/hard/insane/impossible")
-        
+        ran_num = random.choice(num)
+        diff = t.textinput("enter difficulty...", "easy, normal, hard, quit")
+        diff = diff.lower()
+
         if diff == "easy":
             attempts = 8
             break
@@ -28,46 +24,45 @@ def num_choice():
         elif diff == "hard":
             attempts = 3
             break
-        elif diff == "insane":
-            attempts = 2
-            break
-        elif diff == "impossible":
-            attempts = 1
-            break
+        elif diff == "quit":
+            quit(True)
         else:
-            t.write("Please type a difficulty.", align="center", font=("Arial", 16, "normal"))
+            continue
 
     while attempts > 0:
         try:
-            answer = int(t.textinput("Guess number...", f"Enter a number between 0-10 ({attempts} attempts left)"))
-        except:
+            answer = int(t.textinput("guess number", f"enter a number between 0-10 ({attempts} attempts left)"))
+        except ValueError:
             t.clear()
             t.goto(0, 50)
-            t.write("Please type a number.", align="center", font=("Arial", 16, "normal"))
+            t.write("please type a number.", align="center", font=("Arial", 16, "normal"))
         
         if answer < ran_num:
             attempts -= 1
             t.clear()
             t.goto(0, 50)
-            t.write(f"Too low. {attempts} attempts left.", align="center", font=("Arial", 16, "normal"))
+            t.write(f"too low. {attempts} attempts left.", align="center", font=("Arial", 16, "normal"))
         elif answer > ran_num:
             attempts -= 1
             t.clear()
             t.goto(0, 50)
-            t.write(f"Too high. {attempts} attempts left.", align="center", font=("Arial", 16, "normal"))
+            t.write(f"too high. {attempts} attempts left.", align="center", font=("Arial", 16, "normal"))
         elif answer == ran_num:
             t.clear()
             t.goto(0, 50)
-            t.write(f"You win! The number was {ran_num}", align="center", font=("Arial", 16, "normal"))
+            t.write(f"you win! the number was {ran_num}", align="center", font=("Arial", 16, "normal"))
             t.mainloop()
             break
 
-        t.clear()
-        t.goto(0, 50)
-        t.write(f"You lose... The number was {ran_num}", align="center", font=("Arial", 16, "normal"))
-        t.mainloop()        
+    t.clear()
+    t.goto(0, 50)
+    t.write(f"you lose... the number was {ran_num}", align="center", font=("Arial", 16, "normal"))
+    t.mainloop()        
 
 try:
+    icon()
+    t.setup(width=500, height=400)
+    t.title(f"guess for {user}")
     num_choice()
     quit(True)
 except:

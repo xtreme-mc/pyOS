@@ -1,10 +1,10 @@
 from main import *
 
 software = "calculator"
-class Calculator:
+class calculator:
     def __init__(self, master):
         self.master = master
-        master.title("Calculator")
+        master.title(f"calculator for {user}")
 
         self.display = tk.Entry(master, width=40, borderwidth=5)
         self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
@@ -23,7 +23,7 @@ class Calculator:
         self.button_subtract = tk.Button(master, text="-", padx=41, pady=20, command=self.button_subtract)
         self.button_multiply = tk.Button(master, text="*", padx=40, pady=20, command=self.button_multiply)
         self.button_divide = tk.Button(master, text="/", padx=41, pady=20, command=self.button_divide)
-        self.button_clear = tk.Button(master, text="Clear", padx=79, pady=20, command=self.button_clear)
+        self.button_clear = tk.Button(master, text="clear", padx=79, pady=20, command=self.button_clear)
         self.button_equal = tk.Button(master, text="=", padx=91, pady=20, command=self.button_equal)
 
         self.button_1.grid(row=1, column=0)
@@ -96,7 +96,7 @@ class Calculator:
 
 try:
     tkroot = tk.Tk()
-    calculator = Calculator(tkroot)
+    calc = calculator(tkroot)
     tkroot.mainloop()
     quit(True)
 except:

@@ -5,19 +5,18 @@
 It's a project containing apps and games developed using `python3`.  
 
 * `calculator` : Calculate operations.
-* `draw` : Draw selected shape.
+* `draw` : Draw shape with sides and size.
 * `guess` : Guess the random number.
+* `timer` : Count the time remaining.
+* `generator` : Generate random password.
 
 ## How to use
 
-Make sure you have downloaded the archive from [here](https://www.mediafire.com/file/m5bx798snpgm1bm/pyOS.zip/file) the extract its files. You should also download python 3.11 from [here](https://www.python.org) and/or if you have it you should have these modules:
+Make sure you have downloaded the archive from [here](https://www.mediafire.com/file/m5bx798snpgm1bm/pyOS.zip/file) then extract its files. You should also download python 3.11 from [here](https://www.python.org) before running the program.
 
-* `tkinter` for calculator.
-* `turtle` for draw and guess.
-* `random` for guess.
-* `time`, `math` for all programs
+You may need these modules: `turtle, tkinter, random, time, getpass, string, pyperclip`
 
-**Note :** To install a module, open the command prompt and type this command:
+To install a module, type this command in cmd or command line:
 
 ```cmd
 pip install <module>

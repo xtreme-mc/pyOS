@@ -1,36 +1,32 @@
 from main import *
 
-software = "draw"
 class shapes:
-    def __init__(self, sides, size, fill, outline):
+    def __init__(self, sides, size):
         self.sides = sides
         self.size = size
-        self.fill = fill
-        self.outline = outline
+
     def draw(self):
+        t.clear()
+        t.hideturtle()
+        t.pendown()
         t.speed(2)
-        t.fillcolor(self.fill)
-        t.pencolor(self.outline)
         t.goto(0, 0)
-        for side in range(self.sides):
+        for _ in range(self.sides):
             t.fd(self.size)
-            t.lt(360/(side+1))
+            t.lt(360/(self.sides))
 
 try:  
     icon()
     t.title(f"draw for {user}")
-
     while True:
         try:
-            sides = int(input("number of sides: "))
-            size = int(input("size of each line: "))
-            fill = input("fill color: ")
-            outline = input("line color: ")
+            sides = int(t.textinput("input sides", "number of sides: "))
+            size = int(t.textinput("input size", "size of each line: "))
             break
         except ValueError:
             print("type a valid value.")
 
-    userShape = shapes(sides, size, fill, outline)
+    userShape = shapes(sides, size)
     userShape.draw()
     t.mainloop()
     quit(True)
