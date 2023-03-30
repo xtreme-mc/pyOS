@@ -1,6 +1,5 @@
 from main import *
 
-software = "calculator"
 class calculator:
     def __init__(self, master):
         self.master = master

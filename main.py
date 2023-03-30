@@ -1,7 +1,8 @@
 from time import sleep, strftime
 import tkinter as tk
 import turtle as t
-import random, getpass, string, pyperclip
+import random, string
+import getpass
 
 try:
     user = getpass.getuser()
@@ -12,4 +13,5 @@ print(f"welcome, {user}.")
 print(strftime("%H:%M %d/%m/%Y"))
 
 def icon():
-    t.getcanvas()._root().iconbitmap("assets\logo-pyOS.ico")
+    wnicon = t.getcanvas()._root()
+    wnicon.iconbitmap("assets\logo-pyOS.ico")
