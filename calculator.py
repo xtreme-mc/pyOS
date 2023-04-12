@@ -93,10 +93,7 @@ class calculator:
 
         self.display.insert(0, str(result))
 
-try:
-    tkroot = tk.Tk()
-    calc = calculator(tkroot)
-    tkroot.mainloop()
-    quit(True)
-except:
-    quit(False)
+tkroot = tk.Tk()
+calc = calculator(tkroot)
+tkroot.mainloop()
+quit(True)

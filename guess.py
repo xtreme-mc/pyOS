@@ -56,14 +56,11 @@ def num_choice():
 
     t.clear()
     t.goto(0, 50)
-    t.write(f"you lose... the number was {ran_num}", align="center", font=("Arial", 16, "normal"))
-    t.mainloop()        
+    t.write(f"you lose... the number was {ran_num}", align="center", font=("Arial", 16, "normal"))       
 
-try:
-    icon()
-    t.setup(width=500, height=400)
-    t.title(f"guess for {user}")
-    num_choice()
-    quit(True)
-except:
-    quit(False)
+icon()
+t.setup(width=500, height=400)
+t.title(f"guess for {user}")
+num_choice()
+t.mainloop() 
+quit(True)

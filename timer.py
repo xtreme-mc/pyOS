@@ -1,31 +1,29 @@
 from main import *
 
-def timer(seconds):
-    t.clear()
-    t.hideturtle()
-    t.penup()
-    t.goto(0, 0)
-    while seconds > 0:
-        t.clear()
-        t.write(seconds, align = "center", font = ("Arial", 16, "normal"))
-        sleep(1)
-        seconds = seconds - 1
-        t.update()
-    t.clear()
-    t.write("finish", align = "center", font = ("Arial", 16, "normal"))
-
-try:
-    t.setup(width = 500, height = 400)
-    icon()
-    t.title(f"timer for {user}")
+def countdown():
     while True:
         try:
-            timer(int(t.textinput("time by seconds", "input seconds:")))
+            count = int(entry.get())
             break
         except ValueError:
             continue
+        
+    for i in range(count, 0, -1):
+        label.config(text=i)
+        root.update()
+        sleep(1)
+    label.config(text="finish")
 
-    t.mainloop()
-    quit(True)
-except:
-    quit(False)
+root = tk.Tk()
+root.title("Countdown Timer")
+
+label = tk.Label(root, text="enter time:")
+label.pack()
+
+entry = tk.Entry(root)
+entry.pack()
+
+button = tk.Button(root, text="start", command=countdown)
+button.pack()
+
+root.mainloop()
