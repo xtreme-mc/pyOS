@@ -1,7 +1,6 @@
 from main import *
 
 class shapes:
-    """shows a shape in a graphical window with number of sides and size specified by user."""
     def __init__(self, master, sides, size):
         t.clear()
         master.hideturtle()
