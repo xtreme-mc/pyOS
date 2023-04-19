@@ -1,13 +1,11 @@
 from main import *
 
 def countdown():
-    while True:
-        try:
-            count = int(entry.get())
-            break
-        except ValueError:
-            continue
-        
+    try:
+        count = int(entry.get())
+    except ValueError:
+        pass
+ 
     for i in range(count, 0, -1):
         label.config(text=i)
         root.update()
@@ -15,7 +13,8 @@ def countdown():
     label.config(text="finish")
 
 root = tk.Tk()
-root.title("Countdown Timer")
+root.title(f"timer for {user}")
+icon(root)
 
 label = tk.Label(root, text="enter time:")
 label.pack()
@@ -27,3 +26,5 @@ button = tk.Button(root, text="start", command=countdown)
 button.pack()
 
 root.mainloop()
+
+sys.exit

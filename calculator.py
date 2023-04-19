@@ -4,6 +4,7 @@ class calculator:
     def __init__(self, master):
         self.master = master
         master.title(f"calculator for {user}")
+        icon(master)
 
         self.display = tk.Entry(master, width=40, borderwidth=5)
         self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
@@ -93,7 +94,7 @@ class calculator:
 
         self.display.insert(0, str(result))
 
-tkroot = tk.Tk()
-calc = calculator(tkroot)
-tkroot.mainloop()
+root = tk.Tk()
+calc = calculator(root)
+root.mainloop()
 quit(True)
