@@ -4,53 +4,49 @@ import random, string, pyperclip
 def generate():
     char = string.ascii_letters + string.digits + string.punctuation
     password = "".join(random.choices(char, k=12))
-    
-    showPw = tk.Label(root, padx=10, pady=10, text=password)
+
+    showPw = tk.Label(root, padx=5, pady=5, text=password)
     showPw.pack()
 
-    copy = tk.Button(root, text="copy", padx=10, command=pyperclip.copy(password))
-    copy.pack()
+    copy = tk.Button(root, width=20, text="copy",command=lambda:pyperclip.copy(password))
+    copy.pack(padx=5, pady=5)
 
 def upgrade():
     letters = string.ascii_letters
     num = string.digits
     punc = string.punctuation
 
-    userInput = tk.Entry(root, padx=10)
-    userInput.pack
+    userInput = tk.Entry(root, width=100)
+    userInput.pack(padx=5, pady=5)
 
     def check():
-        userInput.get()
-        if not any(word in userInput for word in letters):
-            noLetter = tk.Label(root, padx=10,pady=10, text="your password should contain at least one letter.")
+        password = userInput.get()
+        if not any(word in password for word in letters):
+            noLetter = tk.Label(root, padx=5, pady=5, text="Your password should contain at least one letter.")
             noLetter.pack()
-        elif not any(word in userInput for word in num):
-            noNum = tk.Label(root, padx=10,pady=10, text="your password should contain at least one number.")
+        elif not any(word in password for word in num):
+            noNum = tk.Label(root, padx=5, pady=5, text="Your password should contain at least one number.")
             noNum.pack()
-        elif not any(word in userInput for word in punc):
-            noPunc = tk.Label(root, padx=10,pady=10, text="your password should contain at least one special character.")
+        elif not any(word in password for word in punc):
+            noPunc = tk.Label(root, padx=5,pady=5, text="Your password should contain at least one special character.")
             noPunc.pack()
-        elif len(userInput) < 12:
-            tinyLen = tk.Label(root, padx=10,pady=10, text="your password should contain at least 12 characters.")
-            tinyLen.pack() 
+        elif len(password) < 12:
+            tinyLen = tk.Label(root, padx=5, pady=5, text="Your password should contain at least 12 characters.")
+            tinyLen.pack()
         else:
-            successMsg = tk.Label(root, padx=10,pady=10, text="your password is okay!.")
+            successMsg = tk.Label(root, padx=5, pady=5, text="Your password is okay!")
             successMsg.pack()
 
-    upg = tk.Button(root, text="upgrade", padx=40, pady=20, command=check)
-    upg.pack()
+    upg = tk.Button(root, width=20, text="upgrade",command=check)
+    upg.pack(padx=5, pady=5)
 
 root = tk.Tk()
 root.title(f"password manager for {user}")
+root.geometry("400x300")
+
 icon(root)
 
-menu_bar = tk.Menu(root)
-file_menu = tk.Menu(menu_bar, tearoff=0)
-file_menu.add_command(label="generator", command=generate)
-file_menu.add_command(label="upgrader", command=upgrade)
-file_menu.add_separator()
-file_menu.add_command(label="exit", command=root.quit)
-menu_bar.add_cascade(label="actions", menu=file_menu)
-root.config(menu=menu_bar)
+generate()
+upgrade()
 
 tk.mainloop()

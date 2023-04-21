@@ -14,6 +14,7 @@ def countdown():
 
 root = tk.Tk()
 root.title(f"timer for {user}")
+root.geometry("100x100")
 icon(root)
 
 label = tk.Label(root, text="enter time:")

@@ -7,7 +7,7 @@ class calculator:
         icon(master)
 
         self.display = tk.Entry(master, width=40, borderwidth=5)
-        self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+        self.display.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
         self.button_1 = tk.Button(master, text="1", padx=40, pady=20, command=lambda: self.button_click(1))
         self.button_2 = tk.Button(master, text="2", padx=40, pady=20, command=lambda: self.button_click(2))
