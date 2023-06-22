@@ -1,14 +1,15 @@
 from main import *
+from tkinter import messagebox
 import random, string, pyperclip
 
 def generate():
     char = string.ascii_letters + string.digits + string.punctuation
-    password = "".join(random.choices(char, k=12))
+    password = "".join(random.choices(char, k=random.randint(8,16)))
 
     showPw = tk.Label(root, padx=5, pady=5, text=password)
     showPw.pack()
 
-    copy = tk.Button(root, width=20, text="copy",command=lambda:pyperclip.copy(password))
+    copy = tk.Button(root, text="copy", command=lambda:pyperclip.copy(password))
     copy.pack(padx=5, pady=5)
 
 def upgrade():
@@ -16,33 +17,28 @@ def upgrade():
     num = string.digits
     punc = string.punctuation
 
-    userInput = tk.Entry(root, width=100)
+    userInput = tk.Entry(root)
     userInput.pack(padx=5, pady=5)
 
     def check():
         password = userInput.get()
         if not any(word in password for word in letters):
-            noLetter = tk.Label(root, padx=5, pady=5, text="Your password should contain at least one letter.")
-            noLetter.pack()
+            noLetter = messagebox.showinfo("Error", "Your password should contain at least one letter.")
         elif not any(word in password for word in num):
-            noNum = tk.Label(root, padx=5, pady=5, text="Your password should contain at least one number.")
-            noNum.pack()
+            noNum = messagebox.showinfo("Error", "Your password should contain at least one number.")
         elif not any(word in password for word in punc):
-            noPunc = tk.Label(root, padx=5,pady=5, text="Your password should contain at least one special character.")
-            noPunc.pack()
-        elif len(password) < 12:
-            tinyLen = tk.Label(root, padx=5, pady=5, text="Your password should contain at least 12 characters.")
-            tinyLen.pack()
+            noPunc = messagebox.showinfo("Error", "Your password should contain at least one special character.")
+        elif len(password) < 8:
+            tinyLen = messagebox.showinfo("Error", "Your password should contain at least 8 characters.")
         else:
-            successMsg = tk.Label(root, padx=5, pady=5, text="Your password is okay!")
-            successMsg.pack()
+            successMsg = messagebox.showinfo("Congratulations", "Your password is okay!")
 
-    upg = tk.Button(root, width=20, text="upgrade",command=check)
+    upg = tk.Button(root, text="upgrade", command=check)
     upg.pack(padx=5, pady=5)
 
 root = tk.Tk()
 root.title(f"password manager for {user}")
-root.geometry("400x300")
+root.geometry("400x200")
 
 icon(root)
 
