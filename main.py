@@ -8,16 +8,16 @@ Feedback : If you have bugs, issues, glitches or got any idea to improve our pro
 Made by Xtreme MC Studios 2023. © All rights reserved.
 """
 
-from time import sleep, strftime
-import tkinter as tk
-import getpass, sys
+import getpass, time
 
 try:
     user = getpass.getuser()
 except:
     user = "guest"
 
+datetime = time.strftime("%H:%M %d/%m/%Y")
+
 print(f"welcome, {user}.")
-print(strftime("%H:%M %d/%m/%Y"))
+print(datetime)
 
 def icon(root): root.iconbitmap("assets\logo-pyOS.ico")

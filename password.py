@@ -1,16 +1,16 @@
 from main import *
 from tkinter import messagebox
-import random, string, pyperclip
+import tkinter as tk
+import random, string
 
 def generate():
-    char = string.ascii_letters + string.digits + string.punctuation
-    password = "".join(random.choices(char, k=random.randint(8,16)))
+    def new():
+        char = string.ascii_letters + string.digits + string.punctuation
+        password = "".join(random.choices(char, k=random.randint(8,16)))
+        showPw = messagebox.showinfo(f"Password for {user}", f"Here is your password:\n\n{password}")
 
-    showPw = tk.Label(root, padx=5, pady=5, text=password)
-    showPw.pack()
-
-    copy = tk.Button(root, text="copy", command=lambda:pyperclip.copy(password))
-    copy.pack(padx=5, pady=5)
+    generatePw = tk.Button(root, text="generate", command=new)
+    generatePw.pack(padx=5, pady=5)
 
 def upgrade():
     letters = string.ascii_letters
@@ -38,7 +38,7 @@ def upgrade():
 
 root = tk.Tk()
 root.title(f"password manager for {user}")
-root.geometry("400x200")
+root.geometry("200x100")
 
 icon(root)
 
@@ -46,3 +46,4 @@ generate()
 upgrade()
 
 tk.mainloop()
+exit()
