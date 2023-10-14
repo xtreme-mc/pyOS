@@ -1,18 +1,17 @@
 from main import *
 import tkinter as tk
 
-# defining the main class
 class calculator:
     def __init__(self, master):
         self.master = master
         master.title(f"calculator for {user}")
         icon(master)
 
-        # creating the user input
+        "Creating the user input."
         self.display = tk.Entry(master, width=40, borderwidth=5)
         self.display.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
-        # setting up the buttons
+        "Setting up the buttons."
         self.button_1 = tk.Button(master, text="1", padx=40, pady=20, command=lambda: self.button_click(1))
         self.button_2 = tk.Button(master, text="2", padx=40, pady=20, command=lambda: self.button_click(2))
         self.button_3 = tk.Button(master, text="3", padx=40, pady=20, command=lambda: self.button_click(3))
@@ -30,7 +29,7 @@ class calculator:
         self.button_clear = tk.Button(master, text="clear", padx=79, pady=20, command=self.button_clear)
         self.button_equal = tk.Button(master, text="=", padx=91, pady=20, command=self.button_equal)
 
-        # putting the buttons in grids
+        "Putting the buttons in grids."
         self.button_1.grid(row=1, column=0)
         self.button_2.grid(row=1, column=1)
         self.button_3.grid(row=1, column=2)
@@ -52,7 +51,7 @@ class calculator:
 
         self.button_equal.grid(row=5, column=1, columnspan=2)
 
-    # making the buttons functionnal
+    "Making the buttons functionnal."
     def button_click(self, number):
         current = self.display.get()
         self.display.delete(0, tk.END)
@@ -89,7 +88,7 @@ class calculator:
         second_number = self.display.get()
         self.display.delete(0, tk.END)
 
-        # doing the operations the getting the result
+        "Doing the operations then getting the result."
         if self.current_operation == "+":
             result = self.first_number + int(second_number)
         elif self.current_operation == "-":

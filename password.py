@@ -3,7 +3,7 @@ from tkinter import messagebox
 import tkinter as tk
 import string
 
-# setting up characters
+"Setting up characters."
 letters = string.ascii_letters
 num = string.digits
 punc = string.punctuation
@@ -13,15 +13,14 @@ root.title(f"password manager for {user}")
 root.geometry("400x200")
 icon(root)
 
-# showing a paragraph
 paragraph = tk.Label(root, text="Type your password below to upgrade.\n\nNote: We do not collect any data.")
 paragraph.pack(padx=5, pady=5)
 
 userInput = tk.Entry(root, width=50)
 userInput.pack(padx=5, pady=5)
 
-# checking the password
 def check():
+    "Checking the password."
     password = userInput.get()
     if not any(word in password for word in letters):
         noLetter = messagebox.showinfo("Error", "Your password should contain at least one letter.")

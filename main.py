@@ -10,18 +10,19 @@ Made by Xtreme MC Studios 2023. © All rights reserved.
 
 import getpass, time
 
-# getting the username
 try:
+    "Trying to get username."
     user = getpass.getuser()
 except:
+    "Else username is guest."
     user = "guest"
 
-# getting local date and time
+"Getting local date and time."
 datetime = time.strftime("%H:%M %d/%m/%Y")
 
-# welcoming the user
+"Welcoming the user."
 print(f"welcome, {user}.")
 print(datetime)
 
-# setting up the icon of the GUI
+"Setting up the icon of the GUI."
 def icon(root): root.iconbitmap("assets\logo-pyOS.ico")
