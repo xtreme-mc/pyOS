@@ -24,5 +24,6 @@ datetime = time.strftime("%H:%M %d/%m/%Y")
 print(f"welcome, {user}.")
 print(datetime)
 
-"Setting up the icon of the GUI."
-def icon(root): root.iconbitmap("assets\logo-pyOS.ico")
+def icon(root): 
+    "The icon of the GUI window."
+    root.iconbitmap("assets\logo-pyOS.ico")
