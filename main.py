@@ -1,11 +1,10 @@
 """
-PyOS : Python Operating System
+This module is used to get some informations about the user.
 
-Introduction : It's a project containing apps and games developed using `python3`.  
+- Username: Used for the welcome message, and for window names like this: [appName] for [username]
+- Date & Time: Shows local date & time in the terminal, after the welcome message.
 
-Feedback : If you have bugs, issues, glitches or got any idea to improve our program please let us know in [Github]('https://github.com/Sansoun/pyOS').
-
-Made by Xtreme MC Studios 2023. © All rights reserved.
+NOTE: We do not collect any personal information other than what is indicated above.
 """
 
 import getpass, time
