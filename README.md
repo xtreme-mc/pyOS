@@ -48,7 +48,7 @@ pip install jupyter
 
 ## Feedback
 
-If you encounter bugs, issues, glitches or got any idea to improve our program please let us know in [Github]('https://github.com/xtreme-mc/pyOS').
+If you encounter bugs, issues, glitches or got any idea to improve our program please let us know in [Github](https://github.com/xtreme-mc/pyOS).
 
 ***
 
