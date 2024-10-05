@@ -51,4 +51,4 @@ pip install jupyter
 
 ***
 
-Made by **Xtreme MC Studios** 2024. © All rights reserved.
+Made by **Xtreme MC** Studios 2023. © All rights reserved.
