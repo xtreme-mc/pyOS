@@ -1,5 +1,3 @@
-# ignore important markdowns
-
-
-# keep README.md for updates
-!README.md
+# ignore license and security policy
+LICENSE
+SECURITY.md
