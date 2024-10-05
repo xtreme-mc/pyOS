@@ -52,4 +52,4 @@ If you encounter bugs, issues, glitches or got any idea to improve our program p
 
 ***
 
-Made by **Xtreme MC** Studios 2023. © All rights reserved.
+Made by **Xtreme MC** Studios 2024. © All rights reserved.
