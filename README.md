@@ -1,6 +1,6 @@
 # PyOS : Python Operating System
 
-PyOS is a simple project made with Python 3 and jupyter notebooks. It includes some utilities with GUI that may be used for various tasks.
+PyOS is a simple project made with Python 3 and jupyter notebooks. It includes some services with GUI that may be used for various tasks.
 
 <p align="center">
     <img alt="Static Badge" src="https://img.shields.io/badge/Python-OS-orange">
@@ -12,11 +12,11 @@ PyOS is a simple project made with Python 3 and jupyter notebooks. It includes s
 
 ## Description
 
-This project provides some useful utilities that can be used for common or advanced tasks. They are all grouped in one `.ipynb` file, making it easy to access and use them. It is designed to be simple and easy to use.
+This project provides different and useful services that can be used for common or advanced tasks. They are all grouped in one `.ipynb` file, making it easy to access and use them.
 
 ## Features
 
-- **Utilities:** There are some useful utilities that can be used for various tasks.
+- **Services:** There are many useful Services that can be used for various tasks.
 - **Simple GUI:** Makes it easier for users to easily interact with the utilities.
 - **Libraries:** Such as tkinter which is used for the GUI, and other libraries.
 - **Easy control:** Users can easily control the utilities with a simple GUI.
@@ -31,25 +31,24 @@ This project provides some useful utilities that can be used for common or advan
 <a name="resources"></a>
 
 ## Resources
+First of all, check if you have the latest version of python. You can download it from [here](https://python.org/downloads).\
+NOTE: You can download any version of `Python 3` if your system doesn't support the latest.
 
-- **Utilities:** [Download notebook](samples.ipynb)
-- **Main:** [Download main.py](main.py)\
-*Else you can remove `from main import *` from each code.*
-- **Libraries:** Use these command lines in the terminal to download each library.
+- [Samples.ipynb](samples.ipynb) : Contains all services, each cell contains a code for a service.
+- [Main.py](main.py) :  Contains the main code, as it imports libraries and shows information.
+
+- **freegames** A simple library used for making games and their GUI. Download it from the command line below.
 ```powershell
-# freegames for snake.py
+# freegames install
 pip install freegames
 ```
-`Jupyter` is the most important library, here's how to download it from pip:
+- **Jupyter** is an IDE used to run `samples.ipynb`. You can download it from [here](https://jupyter.org/install) or use the command line below.
+
 ```powershell
-#install jupyter
+#jupyter install
 pip install jupyter
 ```
 
-## Feedback
-
-If you encounter bugs, issues, glitches or got any idea to improve our program please let us know in [Github](https://github.com/xtreme-mc/pyOS).
-
 ***
 
-Made by **Xtreme MC** Studios 2023. © All rights reserved.
+Made by **Xtreme MC Studios** 2024. © All rights reserved.

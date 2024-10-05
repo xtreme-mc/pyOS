@@ -1,12 +1,4 @@
-"""
-This module is used to get some informations about the user.
-
-- Username: Used for the welcome message, and for window names like this: [appName] for [username]
-- Date & Time: Shows local date & time in the terminal, after the welcome message.
-
-NOTE: We do not collect any personal information other than what is indicated above.
-"""
-
+from freegames import square, vector
 import getpass, time
 
 try:
