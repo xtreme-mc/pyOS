@@ -16,17 +16,17 @@ This project provides different and useful services that can be used for common 
 
 ## Features
 
-- **Services:** There are many useful Services that can be used for various tasks.
-- **Simple GUI:** Makes it easier for users to easily interact with the utilities.
-- **Libraries:** Such as tkinter which is used for the GUI, and other libraries.
-- **Easy control:** Users can easily control the utilities with a simple GUI.
+- 🤖 **Services:** Different and useful services that can be used for various tasks.
+- 🖥️ **Simple GUI:** Makes it easier for users to easily interact with the utilities.
+- 📚 **Libraries:** Such as tkinter which is used for the GUI, and other libraries.
+- 👆 **Easy control:** Users can easily control the utilities with a simple GUI.
 
 ## Getting Started
 
-1 - Clone this repostory and set up your developement environment.\
-2 - [Download required libraries](#resources) from this link to avoid getting errors.\
-3 - You can use the code in this notebook to create your own projects.\
-4 - Fine-tune your project to improve performance and user experience.
+1 - ⚙️ Fork this repostory and set up your developement environment.\
+2 - 🧩 [Download required modules](#resources) from this link to avoid getting errors.\
+3 - 🗒️ You can use the code in this notebook to create your own projects.\
+4 - 🛠️ Fine-tune your project to improve performance and user experience.
 
 <a name="resources"></a>
 
@@ -51,4 +51,4 @@ pip install jupyter
 
 ***
 
-Made by **Xtreme MC** Studios 2023. © All rights reserved.
+© Made by **Xtreme MC** Studios 2023. All rights reserved.
