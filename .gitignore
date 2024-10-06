@@ -1,6 +1,4 @@
-# ignore markdowns and licence
+# Ignore constant markdowns and licences
 *.md
-/LICENSE
-
-# keep README.md for updates
+LICENSE
 !README.md
