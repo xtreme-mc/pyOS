@@ -32,12 +32,12 @@ This project provides different and useful services that can be used for common 
 
 ## Resources
 First of all, check if you have the latest version of python. You can download it from [here](https://python.org/downloads).\
-NOTE: You can download any version of `Python 3` if your system doesn't support the latest.
+NOTE: You can download any version of `Python3` if your system doesn't support the latest.
 
 - [Samples.ipynb](samples.ipynb) : Contains all services, each cell contains a code for a service.
 - [Main.py](main.py) :  Contains the main code, as it imports libraries and shows information.
 
-- **freegames** A simple library used for making games and their GUI. Download it from the command line below.
+- **Freegames** A simple library used for making games and their GUI. Download it from the command line below.
 ```powershell
 # freegames install
 pip install freegames
