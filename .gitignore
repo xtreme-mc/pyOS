@@ -1,4 +1,2 @@
-# Ignore constant markdowns and licences
-*.md
-LICENSE
-!README.md
+# Ignore cache and logs
+/__pycache__/*
