@@ -3,8 +3,12 @@
 PyOS is a simple project made with Python 3 and jupyter notebooks. It includes some services with GUI that may be used for various tasks.
 
 <p align="center">
-    <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues-raw/xtreme-mc/pyOS?logo=github">
-    <img alt="Discord" src="https://img.shields.io/discord/996077038970601543?style=social&logo=discord">
+    <a href="https://github.com/xtreme-mc/pyOS/issues">
+        <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues-raw/xtreme-mc/pyOS?logo=github">
+    </a>
+    <a href="https://discord.com/channels/996077038970601543/996077040119853151">
+        <img alt="Discord" src="https://img.shields.io/discord/996077038970601543?style=social&logo=discord">
+    </a>
     <br><br>
     <img src="assets/logo-pyOS.ico">
 </p>
