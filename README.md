@@ -10,7 +10,7 @@ PyOS is a simple project made with Python 3 and jupyter notebooks. It includes s
         <img alt="Discord" src="https://img.shields.io/discord/996077038970601543?style=social&logo=discord">
     </a>
     <br><br>
-    <img src="assets/logo-pyOS.ico">
+    <img alt="PyOS icon" src="assets/logo-pyOS.ico">
 </p>
 
 ## Description
@@ -34,6 +34,7 @@ This project provides different and useful services that can be used for common 
 <a name="resources"></a>
 
 ## Resources
+
 First of all, check if you have the latest version of python. You can download it from [here](https://python.org/downloads).\
 NOTE: You can download any version of `Python3` if your system doesn't support the latest.
 
@@ -41,10 +42,12 @@ NOTE: You can download any version of `Python3` if your system doesn't support t
 - [Main.py](main.py) :  Contains the main code, as it imports libraries and shows information.
 
 - **Freegames** A simple library used for making games and their GUI. Download it from the command line below.
+
 ```powershell
 # freegames install
 pip install freegames
 ```
+
 - **Jupyter** is an IDE used to run `samples.ipynb`. You can download it from [here](https://jupyter.org/install) or use the command line below.
 
 ```powershell

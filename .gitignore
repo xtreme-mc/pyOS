@@ -1,3 +1,2 @@
 # Ignore logs and configurations
 __pycache__/*
-.vscode/*
