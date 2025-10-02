@@ -2,15 +2,7 @@
 from main import *
 from turtle import *
 from random import randrange
-
-root = Screen()._root
-
-title(f"snake for {user}")
-icon(root)
-
-food = vector(0, 0)
-snake = [vector(10, 0)]
-aim = vector(0, -10)
+from freegames import square, vector
 
 def change(x, y):
     "Change snake direction."
@@ -49,13 +41,22 @@ def move():
     update()
     ontimer(move, 100)
 
-setup(420, 420, 370, 0)
-hideturtle()
-tracer(False)
-listen()
-onkey(lambda: change(10, 0), 'Right')
-onkey(lambda: change(-10, 0), 'Left')
-onkey(lambda: change(0, 10), 'Up')
-onkey(lambda: change(0, -10), 'Down')
-move()
-done()
+if __name__ == "__main__":
+    root = Screen()._root
+    title(f"snake for {user_get}")
+    icon(root)
+
+    food = vector(0, 0)
+    snake = [vector(10, 0)]
+    aim = vector(0, -10)
+
+    setup(420, 420, 370, 0)
+    hideturtle()
+    tracer(False)
+    listen()
+    onkey(lambda: change(10, 0), 'Right')
+    onkey(lambda: change(-10, 0), 'Left')
+    onkey(lambda: change(0, 10), 'Up')
+    onkey(lambda: change(0, -10), 'Down')
+    move()
+    done()

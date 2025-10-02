@@ -1,6 +1,5 @@
 # Notepad
 from main import *
-
 import tkinter as tk
 from tkinter import filedialog
 
@@ -25,23 +24,24 @@ def save_file():
         with open(file_path, "w") as file:
             file.write(content)
 
-app = tk.Tk()
-icon(app)
-app.title(f"Notes for {user}")
+if __name__ == "__main__":
+    app = tk.Tk()
+    icon(app)
+    app.title(f"Notes for {user_get}")
 
-text = tk.Text(app, wrap=tk.WORD)
-text.pack(expand=True, fill=tk.BOTH)
+    text = tk.Text(app, wrap=tk.WORD)
+    text.pack(expand=True, fill=tk.BOTH)
 
-menu = tk.Menu(app)
-app.config(menu=menu)
+    menu = tk.Menu(app)
+    app.config(menu=menu)
 
-"Creating the navigation bar."
-file_menu = tk.Menu(menu, tearoff=False)
-menu.add_cascade(label="File", menu=file_menu)
-file_menu.add_command(label="New", command=new_file)
-file_menu.add_command(label="Open", command=open_file)
-file_menu.add_command(label="Save", command=save_file)
-file_menu.add_separator()
-file_menu.add_command(label="Exit", command=app.quit)
+    "Creating the navigation bar."
+    file_menu = tk.Menu(menu, tearoff=False)
+    menu.add_cascade(label="File", menu=file_menu)
+    file_menu.add_command(label="New", command=new_file)
+    file_menu.add_command(label="Open", command=open_file)
+    file_menu.add_command(label="Save", command=save_file)
+    file_menu.add_separator()
+    file_menu.add_command(label="Exit", command=app.quit)
 
-app.mainloop()
+    app.mainloop()

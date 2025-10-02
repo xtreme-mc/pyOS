@@ -4,22 +4,6 @@ from tkinter import messagebox
 import tkinter as tk
 import string
 
-"Setting up characters."
-letters = string.ascii_letters
-num = string.digits
-punc = string.punctuation
-
-root = tk.Tk()
-root.title(f"password manager for {user}")
-root.geometry("400x200")
-icon(root)
-
-paragraph = tk.Label(root, text="Type your password below to upgrade.\n\nNote: We do not collect any data.")
-paragraph.pack(padx=5, pady=5)
-
-userInput = tk.Entry(root, width=50)
-userInput.pack(padx=5, pady=5)
-
 def check():
     "Checking the password."
     password = userInput.get()
@@ -34,8 +18,25 @@ def check():
     else:
         successMsg = messagebox.showinfo("Congratulations", "Your password is okay!")
 
-upg = tk.Button(root, text="upgrade", command=check, width=10)
-upg.pack(padx=5, pady=5)
+if __name__ == "__main__":
+    "Setting up characters."
+    letters = string.ascii_letters
+    num = string.digits
+    punc = string.punctuation
 
-root.mainloop()
-exit()
+    root = tk.Tk()
+    root.title(f"password manager for {user_get}")
+    root.geometry("400x200")
+    icon(root)
+
+    paragraph = tk.Label(root, text="Type your password below to upgrade.\n\nNote: We do not collect any data.")
+    paragraph.pack(padx=5, pady=5)
+
+    userInput = tk.Entry(root, width=50)
+    userInput.pack(padx=5, pady=5)
+
+    upg = tk.Button(root, text="upgrade", command=check, width=10)
+    upg.pack(padx=5, pady=5)
+
+    root.mainloop()
+    exit()

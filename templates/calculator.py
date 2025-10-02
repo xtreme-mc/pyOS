@@ -5,7 +5,7 @@ import tkinter as tk
 class calculator:
     def __init__(self, master):
         self.master = master
-        master.title(f"calculator for {user}")
+        master.title(f"calculator for {user_get}")
         icon(master)
 
         "Creating the user input."
@@ -101,7 +101,8 @@ class calculator:
 
         self.display.insert(0, str(result))
 
-root = tk.Tk()
-calc = calculator(root)
-root.mainloop()
-exit()
+if __name__ == "__main__":
+    root = tk.Tk()
+    calc = calculator(root)
+    root.mainloop()
+    exit()

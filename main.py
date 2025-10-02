@@ -1,20 +1,28 @@
-from freegames import square, vector
 import getpass, time
 
-try:
-    "Trying to get username."
-    user = getpass.getuser()
-except:
-    "Else username is guest."
-    user = "guest"
+def user_get():
+    "Returns local username from the machine."
+    try:
+        user = getpass.getuser()
+    except:
+        print("Cannot find local username from your machine.")
+        user = "user"
+    return user
 
-"Getting local date and time."
-datetime = time.strftime("%H:%M %d/%m/%Y")
-
-"Welcoming the user."
-print(f"welcome, {user}.")
-print(datetime)
+def datetime_get():
+    "Returns local date and time from the machine."
+    try:
+        datetime = time.strftime("%H:%M %d/%m/%Y")
+    except:
+        datetime = "Cannot find local date and time from your machine."
+        return datetime
 
 def icon(root): 
-    "The icon of the GUI window."
+    "The window icon of the graphical user interface."
     root.iconbitmap("assets\logo-pyOS.ico")
+
+print("Starting...")
+time.sleep(1)
+user_get()
+print(f"welcome, {user_get}.")
+print(datetime_get)
