@@ -1,6 +1,4 @@
-# PyOS : Python Operating System
-
-PyOS is a simple project made with Python 3 and jupyter notebooks. It includes some services with GUI that may be used for various tasks.
+# PyOS — Python “Operating System” Utilities Suite
 
 <p align="center">
     <a href="https://github.com/xtreme-mc/pyOS/issues">
@@ -15,46 +13,97 @@ PyOS is a simple project made with Python 3 and jupyter notebooks. It includes s
 
 ## Description
 
-This project provides different and useful services that can be used for common or advanced tasks. They are all grouped in one `.ipynb` file, making it easy to access and use them.
+PyOS is a lightweight framework built in **Python 3**, bundling useful GUI services and utilities into a unified toolset. It’s meant to be simple, modular, and easy to extend.
 
-## Features
+---
 
-- 🤖 **Services:** Different and useful services that can be used for various tasks.
-- 🖥️ **Simple GUI:** Makes it easier for users to easily interact with the utilities.
-- 📚 **Libraries:** Such as tkinter which is used for the GUI, and other libraries.
-- 👆 **Easy control:** Users can easily control the utilities with a simple GUI.
+## 🚀 Features
 
-## Getting Started
+- Multiple services/tools (e.g. file utilities, mini-apps, helpers) all in one package  
+- GUI interface (using `tkinter` or similar) to simplify interaction  
+- Modular architecture: you can pick, disable, or extend individual components  
+- Easy control and configuration for end users  
 
-1 - ⚙️ Fork this repostory and set up your developement environment.\
-2 - 🧩 [Download required modules](#resources) from this link to avoid getting errors.\
-3 - 🗒️ You can use the code in this notebook to create your own projects.\
-4 - 🛠️ Fine-tune your project to improve performance and user experience.
+---
 
-<a name="resources"></a>
+## 🛠️ Getting Started
 
-## Resources
+### 1. Clone / Fork the repo
 
-First of all, check if you have the latest version of python. You can download it from [here](https://python.org/downloads).\
-NOTE: You can download any version of `Python3` if your system doesn't support the latest.
-
-- [Samples.ipynb](samples.ipynb) : Contains all services, each cell contains a code for a service.
-- [Main.py](main.py) :  Contains the main code, as it imports libraries and shows information.
-
-- **Freegames** A simple library used for making games and their GUI. Download it from the command line below.
-
-```powershell
-# freegames install
-pip install freegames
+```
+bash
+git clone https://github.com/xtreme-mc/pyOS.git
+cd pyOS
 ```
 
-- **Jupyter** is an IDE used to run `samples.ipynb`. You can download it from [here](https://jupyter.org/install) or use the command line below.
+### 2. Install dependencies
 
-```powershell
-#jupyter install
-pip install jupyter
+Make sure you have Python 3.x installed. Then:
+
+```
+bash
+pip install -r requirements.txt
 ```
 
-***
+### 3. Run it
 
-© Made by **Xtreme MC** Studios 2023. All rights reserved.
+You can start the main GUI or scripts:
+
+```
+bash
+python main.py
+```
+
+### 4. Extend / Tweak
+
+- Add new services or utilities in new modules  
+- Hook them into the GUI  
+- Improve performance, UX, error handling  
+- Make custom builds or distributions  
+
+---
+
+## 📂 Structure
+
+```
+pyOS/
+├── main.py
+├── templates/
+├── assets/        
+├── README.md
+├── LICENSE
+├── SECURITY.md
+├── CODE_OF_CONDUCT.md
+└── ...
+```
+
+- `main.py` is the entry point  
+- Each utility/service ideally lives in its own file or module  
+- GUI scaffolding and resource files are kept separate  
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **MIT License** — feel free to use, modify, and redistribute.  
+
+---
+
+## 📄 Credits
+
+Built and maintained by **Xtreme MC Studios** 2025.
+
+---
+
+## 🧾 Notes / Tips
+
+- Use version control (git) aggressively — keep small commits when you refactor  
+- Test on multiple platforms (Windows, macOS, Linux) if your GUI is cross-platform  
+- Consider packaging (pyinstaller, or a proper installer) if you distribute it  
+- Add logging, error handling, and config files (e.g. `.ini`, `.yaml`)  
+
+---
+
+## ✏️ About
+
+PyOS brings together small utilities under one roof. It’s not a full OS, but a convenience toolbox built in Python: use it, extend it, make it yours.
